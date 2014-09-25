@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UrenRegestratie
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -21,5 +21,11 @@ namespace UrenRegestratie
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
