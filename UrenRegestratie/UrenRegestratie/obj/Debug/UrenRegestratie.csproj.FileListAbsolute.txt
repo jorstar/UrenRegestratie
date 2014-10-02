@@ -21,3 +21,4 @@ C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Login.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Properties.Resources.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.csproj.GenerateResource.Cache
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Form2.resources
