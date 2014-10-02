@@ -102,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>urenModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="UrenRegestratieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrenRegestratieForm.Designer.cs">
+      <DependentUpon>UrenRegestratieForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UrenRegestratieForm.resx">
+      <DependentUpon>UrenRegestratieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

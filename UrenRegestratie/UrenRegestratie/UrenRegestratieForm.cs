@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace UrenRegestratie
 {
-    public partial class Form2 : Form
+    public partial class UrenRegestratieForm : Form
     {
-        public Form2()
+        public UrenRegestratieForm()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void UrenRegestratieForm_Load(object sender, EventArgs e)
         {
-            //maak urenregiestratieform in een mdi child
-            //en koppel de classes met de comboboxen van urenregistratieform
+
         }
     }
 }
