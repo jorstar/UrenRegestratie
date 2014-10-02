@@ -21,6 +21,7 @@ namespace UrenRegestratie
         {
             //maak urenregiestratieform in een mdi child
             //en koppel de classes met de comboboxen van urenregistratieform
+            //
         }
     }
 }
