@@ -27,5 +27,10 @@ namespace UrenRegestratie
             Application.Exit();
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
