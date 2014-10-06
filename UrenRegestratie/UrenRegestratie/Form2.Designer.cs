@@ -37,6 +37,9 @@
             this.gebruikersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deGebruikersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuweGebruikerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deTakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nieuweTakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +48,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.projectenToolStripMenuItem,
+            this.takenToolStripMenuItem,
             this.urenregistratieToolStripMenuItem,
             this.gebruikersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -113,6 +117,27 @@
             this.nieuweGebruikerToolStripMenuItem.Text = "nieuwe gebruiker";
             this.nieuweGebruikerToolStripMenuItem.Click += new System.EventHandler(this.nieuweGebruikerToolStripMenuItem_Click);
             // 
+            // takenToolStripMenuItem
+            // 
+            this.takenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deTakenToolStripMenuItem,
+            this.nieuweTakenToolStripMenuItem});
+            this.takenToolStripMenuItem.Name = "takenToolStripMenuItem";
+            this.takenToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.takenToolStripMenuItem.Text = "taken";
+            // 
+            // deTakenToolStripMenuItem
+            // 
+            this.deTakenToolStripMenuItem.Name = "deTakenToolStripMenuItem";
+            this.deTakenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deTakenToolStripMenuItem.Text = "de taken";
+            // 
+            // nieuweTakenToolStripMenuItem
+            // 
+            this.nieuweTakenToolStripMenuItem.Name = "nieuweTakenToolStripMenuItem";
+            this.nieuweTakenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nieuweTakenToolStripMenuItem.Text = "nieuwe taken";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +167,9 @@
         private System.Windows.Forms.ToolStripMenuItem gebruikersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deGebruikersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nieuweGebruikerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deTakenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nieuweTakenToolStripMenuItem;
 
     }
 }
