@@ -85,6 +85,12 @@
     <Compile Include="NieuweGebruiker.Designer.cs">
       <DependentUpon>NieuweGebruiker.cs</DependentUpon>
     </Compile>
+    <Compile Include="NieuweTaken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NieuweTaken.Designer.cs">
+      <DependentUpon>NieuweTaken.cs</DependentUpon>
+    </Compile>
     <Compile Include="NieuwProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NieuweGebruiker.resx">
       <DependentUpon>NieuweGebruiker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NieuweTaken.resx">
+      <DependentUpon>NieuweTaken.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NieuwProject.resx">
       <DependentUpon>NieuwProject.cs</DependentUpon>

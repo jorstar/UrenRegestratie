@@ -40,6 +40,7 @@
             this.txtAchternaam = new System.Windows.Forms.TextBox();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
+            this.btnOpslaan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -146,11 +147,21 @@
             this.txtWachtwoord.Size = new System.Drawing.Size(169, 20);
             this.txtWachtwoord.TabIndex = 11;
             // 
+            // btnOpslaan
+            // 
+            this.btnOpslaan.Location = new System.Drawing.Point(15, 236);
+            this.btnOpslaan.Name = "btnOpslaan";
+            this.btnOpslaan.Size = new System.Drawing.Size(75, 23);
+            this.btnOpslaan.TabIndex = 12;
+            this.btnOpslaan.Text = "opslaan";
+            this.btnOpslaan.UseVisualStyleBackColor = true;
+            // 
             // NieuweGebruiker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
+            this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.txtWachtwoord);
             this.Controls.Add(this.txtGebruikersnaam);
             this.Controls.Add(this.txtAchternaam);
@@ -185,5 +196,6 @@
         private System.Windows.Forms.TextBox txtAchternaam;
         private System.Windows.Forms.TextBox txtGebruikersnaam;
         private System.Windows.Forms.TextBox txtWachtwoord;
+        private System.Windows.Forms.Button btnOpslaan;
     }
 }

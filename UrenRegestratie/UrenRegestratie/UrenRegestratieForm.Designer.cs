@@ -44,9 +44,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDatumJaar = new System.Windows.Forms.TextBox();
+            this.combDatumMaand = new System.Windows.Forms.ComboBox();
+            this.combDatumDag = new System.Windows.Forms.ComboBox();
+            this.btnOpslaan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // combUser
@@ -75,7 +76,7 @@
             // 
             // txtVerantwoording
             // 
-            this.txtVerantwoording.Location = new System.Drawing.Point(15, 159);
+            this.txtVerantwoording.Location = new System.Drawing.Point(15, 145);
             this.txtVerantwoording.Multiline = true;
             this.txtVerantwoording.Name = "txtVerantwoording";
             this.txtVerantwoording.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -84,7 +85,7 @@
             // 
             // txtAantalUren
             // 
-            this.txtAantalUren.Location = new System.Drawing.Point(81, 240);
+            this.txtAantalUren.Location = new System.Drawing.Point(82, 226);
             this.txtAantalUren.Name = "txtAantalUren";
             this.txtAantalUren.Size = new System.Drawing.Size(100, 20);
             this.txtAantalUren.TabIndex = 4;
@@ -92,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 111);
+            this.label1.Location = new System.Drawing.Point(16, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 5;
@@ -128,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 143);
+            this.label5.Location = new System.Drawing.Point(12, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 9;
@@ -137,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 246);
+            this.label6.Location = new System.Drawing.Point(13, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 10;
@@ -146,7 +147,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(203, 92);
+            this.label11.Location = new System.Drawing.Point(204, 87);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(24, 13);
             this.label11.TabIndex = 31;
@@ -155,7 +156,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(125, 92);
+            this.label10.Location = new System.Drawing.Point(126, 87);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 30;
@@ -164,7 +165,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 92);
+            this.label9.Location = new System.Drawing.Point(53, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 13);
             this.label9.TabIndex = 29;
@@ -173,7 +174,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(187, 111);
+            this.label8.Location = new System.Drawing.Point(188, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 28;
@@ -182,48 +183,58 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(112, 111);
+            this.label7.Location = new System.Drawing.Point(113, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(10, 13);
             this.label7.TabIndex = 27;
             this.label7.Text = "-";
             // 
-            // textBox1
+            // txtDatumJaar
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 26;
+            this.txtDatumJaar.Location = new System.Drawing.Point(204, 103);
+            this.txtDatumJaar.Name = "txtDatumJaar";
+            this.txtDatumJaar.Size = new System.Drawing.Size(66, 20);
+            this.txtDatumJaar.TabIndex = 26;
             // 
-            // comboBox2
+            // combDatumMaand
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(128, 108);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(53, 21);
-            this.comboBox2.TabIndex = 25;
+            this.combDatumMaand.FormattingEnabled = true;
+            this.combDatumMaand.Location = new System.Drawing.Point(129, 103);
+            this.combDatumMaand.Name = "combDatumMaand";
+            this.combDatumMaand.Size = new System.Drawing.Size(53, 21);
+            this.combDatumMaand.TabIndex = 25;
             // 
-            // comboBox1
+            // combDatumDag
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(55, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(51, 21);
-            this.comboBox1.TabIndex = 24;
+            this.combDatumDag.FormattingEnabled = true;
+            this.combDatumDag.Location = new System.Drawing.Point(56, 103);
+            this.combDatumDag.Name = "combDatumDag";
+            this.combDatumDag.Size = new System.Drawing.Size(51, 21);
+            this.combDatumDag.TabIndex = 24;
+            // 
+            // btnOpslaan
+            // 
+            this.btnOpslaan.Location = new System.Drawing.Point(20, 252);
+            this.btnOpslaan.Name = "btnOpslaan";
+            this.btnOpslaan.Size = new System.Drawing.Size(75, 23);
+            this.btnOpslaan.TabIndex = 32;
+            this.btnOpslaan.Text = "opslaan";
+            this.btnOpslaan.UseVisualStyleBackColor = true;
             // 
             // UrenRegestratieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
+            this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtDatumJaar);
+            this.Controls.Add(this.combDatumMaand);
+            this.Controls.Add(this.combDatumDag);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -262,8 +273,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtDatumJaar;
+        private System.Windows.Forms.ComboBox combDatumMaand;
+        private System.Windows.Forms.ComboBox combDatumDag;
+        private System.Windows.Forms.Button btnOpslaan;
     }
 }

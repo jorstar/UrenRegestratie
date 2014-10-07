@@ -51,6 +51,7 @@
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
+            this.combProjecten.Enter += new System.EventHandler(this.combProjecten_Enter);
             // 
             // label1
             // 
@@ -81,6 +82,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "projecten";
             this.Text = "projecten";
+            this.Load += new System.EventHandler(this.projecten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridviewProjecten)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
