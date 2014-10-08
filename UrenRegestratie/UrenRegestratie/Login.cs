@@ -15,6 +15,7 @@ namespace UrenRegestratie
 {
     public partial class Login : Form
     {
+        UrenRegCon EntityModel = new UrenRegCon();
         public Login()
         {
             InitializeComponent();
@@ -33,66 +34,23 @@ namespace UrenRegestratie
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            #region test
-            //string username = tbUsername.Text;
-            //string password = tbPassword.Text;
+            try
+            {
+                string user = tbUsername.Text;
+                string pass = CalculateHashedPassword(tbPassword.Text, user);
+                tbPassword.Text = "";
+                tbUsername.Text = "";
 
-            ////connection string ophalen uit web.config
-            //string cs = ConfigurationManager.ConnectionStrings["urenRegestratieEntities"].ConnectionString;
+                var Gebruiker = from E in EntityModel.Engineers
+                               where E.gebruikersnaam == user || E.wachtwoord == pass
+                               select new { E.voornaam, E.achternaam, E.permissie, E.foto };
 
-            ////connectie maken
-            //SqlConnection conn = new SqlConnection(cs);
-
-            ////bereken hash voor wachtwoord
-            //string spw2 = CalculateHashedPassword(tbPassword.Text, tbUsername.Text);
-
-            ////maak een sql command
-            ////gebruik maken van stored procedure
-            //SqlCommand cmd = new SqlCommand("logincheck", conn);
-            ////type veranderen naar stored procedure
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            ////parameters vullen
-            //cmd.Parameters.AddWithValue("@u", tbUsername.Text);
-            //cmd.Parameters.AddWithValue("@p", spw2);
-
-            //try
-            //{
-            //    if (conn.State != System.Data.ConnectionState.Open)
-            //    {
-            //        conn.Open();
-            //        SqlDataReader reader = cmd.ExecuteReader();
-            //        if (!reader.HasRows)
-            //        {
-            //            lblError.Text = "Onjuiste inloggegevens";
-            //            tbPassword.Text = "";
-            //            tbPassword.Focus();
-            //        }
-            //        else
-            //        {
-            //            reader.Read();
-
-
-            //        }
-            //    }
-
-            //}
-            //catch (SqlException sqlEx)
-            //{
-            //    lblError.Text = sqlEx.Message;
-            //}
-            //catch (Exception ex)
-            //{
-            //    lblError.Text = ex.Message;
-            //}
-            //finally
-            //{
-            //    if (conn.State != System.Data.ConnectionState.Closed)
-            //    {
-            //        conn.Close();
-            //    }
-            //} 
-            #endregion
-
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 

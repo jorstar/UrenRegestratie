@@ -24,3 +24,11 @@ C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Form2.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.UrenRegestratieForm.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.projecten.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Gebruiker.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.home.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuweGebruiker.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuweTaken.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuwProject.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.projecten.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Taken.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.UrenRegestratieForm.resources

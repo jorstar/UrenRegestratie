@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UrenRegModelStoreContainer" CdmEntityContainer="UrenRegCon">
+    <EntitySetMapping Name="Engineers">
+      <EntityTypeMapping TypeName="UrenRegModel.Engineer">
+        <MappingFragment StoreEntitySet="Engineer">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="voornaam" ColumnName="voornaam" />
+          <ScalarProperty Name="achternaam" ColumnName="achternaam" />
+          <ScalarProperty Name="gebruikersnaam" ColumnName="gebruikersnaam" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="permissie" ColumnName="permissie" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="UrenRegModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="omschrijving" ColumnName="omschrijving" />
+          <ScalarProperty Name="beginDatum" ColumnName="beginDatum" />
+          <ScalarProperty Name="eindDatum" ColumnName="eindDatum" />
+          <ScalarProperty Name="afgesloten" ColumnName="afgesloten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regestraties">
+      <EntityTypeMapping TypeName="UrenRegModel.Regestratie">
+        <MappingFragment StoreEntitySet="Regestratie">
+          <ScalarProperty Name="urenID" ColumnName="urenID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="taakID" ColumnName="taakID" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="verantwoording" ColumnName="verantwoording" />
+          <ScalarProperty Name="uren" ColumnName="uren" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taaks">
+      <EntityTypeMapping TypeName="UrenRegModel.taak">
+        <MappingFragment StoreEntitySet="taak">
+          <ScalarProperty Name="taakID" ColumnName="taakID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="omschrijving" ColumnName="omschrijving" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="logincheck" FunctionName="UrenRegModel.Store.logincheck" />
+  </EntityContainerMapping>
+</Mapping>

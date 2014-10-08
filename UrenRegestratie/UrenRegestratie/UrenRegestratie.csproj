@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engineer.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -99,7 +99,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
     <Compile Include="projecten.cs">
       <SubType>Form</SubType>
@@ -109,19 +109,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regestratie.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
     <Compile Include="taak.cs">
-      <DependentUpon>urenModel.tt</DependentUpon>
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Taken.cs">
       <SubType>Form</SubType>
@@ -129,26 +120,26 @@
     <Compile Include="Taken.Designer.cs">
       <DependentUpon>Taken.cs</DependentUpon>
     </Compile>
-    <Compile Include="urenModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>urenModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="urenModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>urenModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="urenModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>urenModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="UrenRegestratieForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UrenRegestratieForm.Designer.cs">
       <DependentUpon>UrenRegestratieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrenRegModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UrenRegModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UrenRegModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UrenRegModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UrenRegModel.edmx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -199,22 +190,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="urenModel.edmx">
+    <EntityDeploy Include="UrenRegModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>urenModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>UrenRegModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="urenModel.Context.tt">
+    <None Include="UrenRegModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>urenModel.edmx</DependentUpon>
-      <LastGenOutput>urenModel.Context.cs</LastGenOutput>
+      <DependentUpon>UrenRegModel.edmx</DependentUpon>
+      <LastGenOutput>UrenRegModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="urenModel.edmx.diagram">
-      <DependentUpon>urenModel.edmx</DependentUpon>
+    <None Include="UrenRegModel.edmx.diagram">
+      <DependentUpon>UrenRegModel.edmx</DependentUpon>
     </None>
-    <None Include="urenModel.tt">
+    <None Include="UrenRegModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>urenModel.edmx</DependentUpon>
-      <LastGenOutput>urenModel.cs</LastGenOutput>
+      <DependentUpon>UrenRegModel.edmx</DependentUpon>
+      <LastGenOutput>UrenRegModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

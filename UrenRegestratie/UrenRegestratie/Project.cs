@@ -16,8 +16,8 @@ namespace UrenRegestratie
     {
         public Project()
         {
-            this.Regestratie = new HashSet<Regestratie>();
-            this.taak = new HashSet<taak>();
+            this.Regestraties = new HashSet<Regestratie>();
+            this.taaks = new HashSet<taak>();
         }
     
         public int ID { get; set; }
@@ -27,7 +27,7 @@ namespace UrenRegestratie
         public Nullable<System.DateTime> eindDatum { get; set; }
         public bool afgesloten { get; set; }
     
-        public virtual ICollection<Regestratie> Regestratie { get; set; }
-        public virtual ICollection<taak> taak { get; set; }
+        public virtual ICollection<Regestratie> Regestraties { get; set; }
+        public virtual ICollection<taak> taaks { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace UrenRegestratie
     {
         public taak()
         {
-            this.Regestratie = new HashSet<Regestratie>();
+            this.Regestraties = new HashSet<Regestratie>();
         }
     
         public int taakID { get; set; }
@@ -25,6 +25,6 @@ namespace UrenRegestratie
         public string omschrijving { get; set; }
     
         public virtual Project Project { get; set; }
-        public virtual ICollection<Regestratie> Regestratie { get; set; }
+        public virtual ICollection<Regestratie> Regestraties { get; set; }
     }
 }

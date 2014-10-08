@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UrenRegModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Engineer">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="voornaam" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="achternaam" Type="nvarchar" MaxLength="220" Nullable="false" />
+    <Property Name="gebruikersnaam" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="wachtwoord" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="permissie" Type="bit" Nullable="false" />
+    <Property Name="foto" Type="image" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="naam" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="omschrijving" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="beginDatum" Type="date" Nullable="false" />
+    <Property Name="eindDatum" Type="date" />
+    <Property Name="afgesloten" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Regestratie">
+    <Key>
+      <PropertyRef Name="urenID" />
+    </Key>
+    <Property Name="urenID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="taakID" Type="int" Nullable="false" />
+    <Property Name="datum" Type="date" Nullable="false" />
+    <Property Name="verantwoording" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="uren" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="taak">
+    <Key>
+      <PropertyRef Name="taakID" />
+    </Key>
+    <Property Name="taakID" Type="int" Nullable="false" />
+    <Property Name="projectID" Type="int" Nullable="false" />
+    <Property Name="naam" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="omschrijving" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Regestratie_Engineer">
+    <End Role="Engineer" Type="Self.Engineer" Multiplicity="1" />
+    <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engineer">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Regestratie">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Regestratie_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Regestratie">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Regestratie_taak">
+    <End Role="taak" Type="Self.taak" Multiplicity="1" />
+    <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="taak">
+        <PropertyRef Name="taakID" />
+      </Principal>
+      <Dependent Role="Regestratie">
+        <PropertyRef Name="taakID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_taak_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="taak" Type="Self.taak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="taak">
+        <PropertyRef Name="projectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="logincheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="u" Type="nvarchar" Mode="In" />
+    <Parameter Name="p" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="UrenRegModelStoreContainer">
+    <EntitySet Name="Engineer" EntityType="Self.Engineer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Regestratie" EntityType="Self.Regestratie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="taak" EntityType="Self.taak" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Regestratie_Engineer" Association="Self.FK_Regestratie_Engineer">
+      <End Role="Engineer" EntitySet="Engineer" />
+      <End Role="Regestratie" EntitySet="Regestratie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Regestratie_Project" Association="Self.FK_Regestratie_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Regestratie" EntitySet="Regestratie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Regestratie_taak" Association="Self.FK_Regestratie_taak">
+      <End Role="taak" EntitySet="taak" />
+      <End Role="Regestratie" EntitySet="Regestratie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_taak_Project" Association="Self.FK_taak_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="taak" EntitySet="taak" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
