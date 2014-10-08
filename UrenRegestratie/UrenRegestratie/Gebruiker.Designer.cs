@@ -62,11 +62,11 @@
             // 
             // btnVerwijderGebruiker
             // 
-            this.btnVerwijderGebruiker.Location = new System.Drawing.Point(534, 7);
+            this.btnVerwijderGebruiker.Location = new System.Drawing.Point(518, 7);
             this.btnVerwijderGebruiker.Name = "btnVerwijderGebruiker";
-            this.btnVerwijderGebruiker.Size = new System.Drawing.Size(109, 23);
+            this.btnVerwijderGebruiker.Size = new System.Drawing.Size(125, 23);
             this.btnVerwijderGebruiker.TabIndex = 3;
-            this.btnVerwijderGebruiker.Text = "Verwijder Gebruiker";
+            this.btnVerwijderGebruiker.Text = "deactiveer Gebruiker";
             this.btnVerwijderGebruiker.UseVisualStyleBackColor = true;
             this.btnVerwijderGebruiker.Click += new System.EventHandler(this.btnVerwijderGebruiker_Click);
             // 
