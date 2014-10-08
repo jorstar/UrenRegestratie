@@ -51,6 +51,7 @@
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
+            this.combProjecten.SelectedIndexChanged += new System.EventHandler(this.combProjecten_SelectedIndexChanged);
             this.combProjecten.Enter += new System.EventHandler(this.combProjecten_Enter);
             // 
             // label1
