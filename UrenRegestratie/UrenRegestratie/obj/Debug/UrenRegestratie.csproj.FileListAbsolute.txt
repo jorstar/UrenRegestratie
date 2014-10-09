@@ -29,6 +29,6 @@ D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuweGebruiker.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuweTaken.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuwProject.resources
-D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.projecten.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Taken.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.UrenRegestratieForm.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.projectenForm.resources

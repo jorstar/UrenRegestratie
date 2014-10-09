@@ -42,17 +42,18 @@
             this.btnLogin.Location = new System.Drawing.Point(105, 113);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(186, 113);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -63,14 +64,17 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '•';
             this.tbPassword.Size = new System.Drawing.Size(156, 20);
-            this.tbPassword.TabIndex = 2;
+            this.tbPassword.TabIndex = 1;
+            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // tbUsername
             // 
             this.tbUsername.Location = new System.Drawing.Point(105, 24);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(156, 20);
-            this.tbUsername.TabIndex = 3;
+            this.tbUsername.TabIndex = 0;
+            this.tbUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUsername_KeyDown);
             // 
             // label1
             // 
@@ -113,8 +117,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -48,7 +48,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "home";
+            this.Load += new System.EventHandler(this.home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,7 +15,7 @@ namespace UrenRegestratie
 {
     public partial class Login : Form
     {
-        UrenRegCon EntityModel = new UrenRegCon();
+        
         public Login()
         {
             InitializeComponent();
@@ -36,15 +36,25 @@ namespace UrenRegestratie
         {
             try
             {
+                UrenRegCon EntityModel = new UrenRegCon();
                 string user = tbUsername.Text;
                 string pass = CalculateHashedPassword(tbPassword.Text, user);
                 tbPassword.Text = "";
                 tbUsername.Text = "";
 
                 var Gebruiker = from E in EntityModel.Engineers
-                               where E.gebruikersnaam == user || E.wachtwoord == pass
-                               select new { E.voornaam, E.achternaam, E.permissie, E.foto };
-
+                                 where E.gebruikersnaam == user && E.wachtwoord == pass
+                                 select new { E.voornaam, E.achternaam, E.permissie, E.foto };
+                if (Gebruiker.Any())
+                {
+                    Form2 frm = new Form2();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username / password");
+                }
                 
             }
             catch(Exception ex)
@@ -66,6 +76,44 @@ namespace UrenRegestratie
 
             }
 
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, EventArgs.Empty);
+            }
+
+        }
+
+        private void tbUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, EventArgs.Empty);
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, EventArgs.Empty);
+            }
         }
     }
 }

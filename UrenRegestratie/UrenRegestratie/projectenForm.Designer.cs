@@ -1,6 +1,6 @@
 ﻿namespace UrenRegestratie
 {
-    partial class projecten
+    partial class projectenForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,17 +37,18 @@
             // 
             // btnProjAfsl
             // 
-            this.btnProjAfsl.Location = new System.Drawing.Point(547, 4);
+            this.btnProjAfsl.Location = new System.Drawing.Point(542, 38);
             this.btnProjAfsl.Name = "btnProjAfsl";
             this.btnProjAfsl.Size = new System.Drawing.Size(96, 23);
             this.btnProjAfsl.TabIndex = 0;
             this.btnProjAfsl.Text = "Project Afsluiten";
             this.btnProjAfsl.UseVisualStyleBackColor = true;
+            this.btnProjAfsl.Click += new System.EventHandler(this.btnProjAfsl_Click);
             // 
             // combProjecten
             // 
             this.combProjecten.FormattingEnabled = true;
-            this.combProjecten.Location = new System.Drawing.Point(72, 4);
+            this.combProjecten.Location = new System.Drawing.Point(67, 38);
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
@@ -57,21 +58,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 7);
+            this.label1.Location = new System.Drawing.Point(7, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "projecten:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // GridviewProjecten
             // 
             this.GridviewProjecten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridviewProjecten.Location = new System.Drawing.Point(-1, 31);
+            this.GridviewProjecten.Location = new System.Drawing.Point(0, 65);
             this.GridviewProjecten.Name = "GridviewProjecten";
-            this.GridviewProjecten.Size = new System.Drawing.Size(656, 257);
+            this.GridviewProjecten.Size = new System.Drawing.Size(656, 221);
             this.GridviewProjecten.TabIndex = 4;
+            this.GridviewProjecten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridviewProjecten_CellContentClick);
             // 
-            // projecten
+            // projectenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,7 +84,7 @@
             this.Controls.Add(this.combProjecten);
             this.Controls.Add(this.btnProjAfsl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "projecten";
+            this.Name = "projectenForm";
             this.Text = "projecten";
             this.Load += new System.EventHandler(this.projecten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridviewProjecten)).EndInit();
