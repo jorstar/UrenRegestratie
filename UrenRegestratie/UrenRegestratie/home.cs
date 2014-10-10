@@ -19,7 +19,16 @@ namespace UrenRegestratie
 
         private void home_Load(object sender, EventArgs e)
         {
-            
+            UrenRegCon ent = new UrenRegCon();
+            string home = from p in ent.Projects
+                          join t in ent.taaks 
+                          on p.ID equals t.projectID
+                          where 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -85,6 +85,7 @@
             this.Controls.Add(this.btnProjAfsl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "projectenForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "projecten";
             this.Load += new System.EventHandler(this.projecten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridviewProjecten)).EndInit();

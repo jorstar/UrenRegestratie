@@ -25,7 +25,12 @@ namespace UrenRegestratie
 
         private void projecten_Load(object sender, EventArgs e)
         {
-            
+            UrenRegCon EntityModel = new UrenRegCon();
+            var projectens = (from p in EntityModel.Projects
+                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
+            combProjecten.DisplayMember = "projectnaam";
+            combProjecten.ValueMember = "projectid";
+            combProjecten.DataSource = projectens;
         }
 
         private void combProjecten_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,12 +50,7 @@ namespace UrenRegestratie
 
         private void btnProjAfsl_Click(object sender, EventArgs e)
         {
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
+            
         }
     }
 }
