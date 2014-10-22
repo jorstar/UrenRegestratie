@@ -21,5 +21,10 @@ namespace UrenRegestratie
         {
 
         }
+
+        private void Taken_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
