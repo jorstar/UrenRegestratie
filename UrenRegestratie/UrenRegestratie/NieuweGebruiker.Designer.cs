@@ -155,6 +155,7 @@
             this.btnOpslaan.TabIndex = 12;
             this.btnOpslaan.Text = "opslaan";
             this.btnOpslaan.UseVisualStyleBackColor = true;
+            this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
             // NieuweGebruiker
             // 

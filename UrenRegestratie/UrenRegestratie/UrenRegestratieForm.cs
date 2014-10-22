@@ -21,5 +21,10 @@ namespace UrenRegestratie
         {
 
         }
+
+        private void btnOpslaan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

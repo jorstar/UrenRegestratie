@@ -16,5 +16,10 @@ namespace UrenRegestratie
         {
             InitializeComponent();
         }
+
+        private void combProjecten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
