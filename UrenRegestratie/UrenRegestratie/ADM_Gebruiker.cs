@@ -32,5 +32,10 @@ namespace UrenRegestratie
             combGebruikers.ValueMember = "gebruikersnaam";
             combGebruikers.DataSource = users;
         }
+
+        private void combGebruikers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

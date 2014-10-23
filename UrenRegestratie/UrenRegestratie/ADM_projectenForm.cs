@@ -55,7 +55,10 @@ namespace UrenRegestratie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             ADM_NieuwProject newFrm = new ADM_NieuwProject();
             newFrm.MdiParent = Form2.ActiveForm;
             newFrm.WindowState = FormWindowState.Maximized;

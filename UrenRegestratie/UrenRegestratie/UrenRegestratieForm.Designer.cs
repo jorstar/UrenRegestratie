@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.combUser = new System.Windows.Forms.ComboBox();
             this.combProject = new System.Windows.Forms.ComboBox();
             this.combTaak = new System.Windows.Forms.ComboBox();
             this.txtVerantwoording = new System.Windows.Forms.TextBox();
             this.txtAantalUren = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,16 +40,7 @@
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // combUser
-            // 
-            this.combUser.FormattingEnabled = true;
-            this.combUser.Location = new System.Drawing.Point(56, 36);
-            this.combUser.Name = "combUser";
-            this.combUser.Size = new System.Drawing.Size(121, 21);
-            this.combUser.TabIndex = 0;
             // 
             // combProject
             // 
@@ -93,15 +82,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "datum:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "user:";
             // 
             // label3
             // 
@@ -164,34 +144,22 @@
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(179, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 13);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "peter: moet automatish van de ingelogde";
-            // 
             // UrenRegestratieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAantalUren);
             this.Controls.Add(this.txtVerantwoording);
             this.Controls.Add(this.combTaak);
             this.Controls.Add(this.combProject);
-            this.Controls.Add(this.combUser);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -206,13 +174,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox combUser;
         private System.Windows.Forms.ComboBox combProject;
         private System.Windows.Forms.ComboBox combTaak;
         private System.Windows.Forms.TextBox txtVerantwoording;
         private System.Windows.Forms.TextBox txtAantalUren;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -220,6 +186,5 @@
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Label label7;
     }
 }

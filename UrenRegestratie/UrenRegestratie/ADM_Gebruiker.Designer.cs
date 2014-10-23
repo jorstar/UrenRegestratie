@@ -43,6 +43,7 @@
             this.combGebruikers.Name = "combGebruikers";
             this.combGebruikers.Size = new System.Drawing.Size(121, 21);
             this.combGebruikers.TabIndex = 0;
+            this.combGebruikers.SelectedIndexChanged += new System.EventHandler(this.combGebruikers_SelectedIndexChanged);
             // 
             // label1
             // 

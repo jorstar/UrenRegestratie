@@ -38,3 +38,8 @@ C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.NieuwProject.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.projectenForm.resources
 C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.Taken.resources
+C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_Gebruiker.resources
+C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_NieuweGebruiker.resources
+C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_NieuweTaken.resources
+C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_NieuwProject.resources
+C:\Users\beheer\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_projectenForm.resources
