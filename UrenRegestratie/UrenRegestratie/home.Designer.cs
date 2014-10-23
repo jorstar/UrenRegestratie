@@ -33,10 +33,10 @@
             this.lblAchternaam = new System.Windows.Forms.Label();
             this.lblVoornaam = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvprotaak = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvprotaak)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Voornaam:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -84,13 +83,13 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvprotaak
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 114);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvprotaak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvprotaak.Location = new System.Drawing.Point(15, 114);
+            this.dgvprotaak.Name = "dgvprotaak";
+            this.dgvprotaak.Size = new System.Drawing.Size(240, 150);
+            this.dgvprotaak.TabIndex = 6;
             // 
             // label3
             // 
@@ -107,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvprotaak);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAchternaam);
             this.Controls.Add(this.lblVoornaam);
@@ -119,7 +118,7 @@
             this.Text = "home";
             this.Load += new System.EventHandler(this.home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvprotaak)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +131,7 @@
         private System.Windows.Forms.Label lblAchternaam;
         private System.Windows.Forms.Label lblVoornaam;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvprotaak;
         private System.Windows.Forms.Label label3;
 
     }

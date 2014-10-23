@@ -23,7 +23,18 @@ namespace UrenRegestratie
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            #region newUSER
+            //UrenRegCon fw = new UrenRegCon();
+            //Engineer en = new Engineer();
+            //en.userID = 2;
+            //en.voornaam = "user";
+            //en.achternaam = "user";
+            //en.gebruikersnaam = "user";
+            //en.wachtwoord = CalculateHashedPassword("USER", "user");
+            //en.permissie = false;
+            //fw.Engineers.Add(en);
+            //fw.SaveChanges(); 
+            #endregion                        
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -42,24 +53,30 @@ namespace UrenRegestratie
                 tbPassword.Text = "";
                 tbUsername.Text = "";
 
-                var Gebruiker = from E in EntityModel.Engineers
+                var Gebruiker = (from E in EntityModel.Engineers
                                  where E.gebruikersnaam == user && E.wachtwoord == pass
-                                 select new { E.voornaam, E.achternaam, E.permissie, E.foto };
-                if (Gebruiker.Any())
-                {
-                    Form2 frm = new Form2();
+                                 select E.userID).First();
+                //if (Gebruiker != null)
+                //{
+                int uid = Convert.ToInt16(Gebruiker);
+
+                    Form2 frm = new Form2(uid);
                     frm.Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Incorrect username / password");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Incorrect username / password");
+                //}
                 
             }
-            catch(Exception ex)
+            catch(EntityException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Incorrect username / password");
             }
 
         }

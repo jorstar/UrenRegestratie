@@ -50,5 +50,14 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="logincheck" FunctionName="UrenRegModel.Store.logincheck" />
+    <EntitySetMapping Name="user_taak">
+      <EntityTypeMapping TypeName="UrenRegModel.user_taak">
+        <MappingFragment StoreEntitySet="user_taak">
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="taakID" ColumnName="taakID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

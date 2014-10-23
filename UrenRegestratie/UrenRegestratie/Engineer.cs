@@ -17,6 +17,7 @@ namespace UrenRegestratie
         public Engineer()
         {
             this.Regestraties = new HashSet<Regestratie>();
+            this.user_taak = new HashSet<user_taak>();
         }
     
         public int userID { get; set; }
@@ -28,5 +29,6 @@ namespace UrenRegestratie
         public byte[] foto { get; set; }
     
         public virtual ICollection<Regestratie> Regestraties { get; set; }
+        public virtual ICollection<user_taak> user_taak { get; set; }
     }
 }

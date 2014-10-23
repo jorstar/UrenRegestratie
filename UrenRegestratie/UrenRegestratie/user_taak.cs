@@ -12,19 +12,20 @@ namespace UrenRegestratie
     using System;
     using System.Collections.Generic;
     
-    public partial class Regestratie
+    public partial class user_taak
     {
-        public int urenID { get; set; }
+        public user_taak()
+        {
+            this.Regestraties = new HashSet<Regestratie>();
+        }
+    
         public int userID { get; set; }
-        public int projectID { get; set; }
         public int taakID { get; set; }
-        public System.DateTime datum { get; set; }
-        public string verantwoording { get; set; }
-        public int uren { get; set; }
+        public int projectID { get; set; }
     
         public virtual Engineer Engineer { get; set; }
         public virtual Project Project { get; set; }
+        public virtual ICollection<Regestratie> Regestraties { get; set; }
         public virtual taak taak { get; set; }
-        public virtual user_taak user_taak { get; set; }
     }
 }

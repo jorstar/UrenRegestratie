@@ -49,39 +49,29 @@
           <Property Name="naam" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="omschrijving" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK_Regestratie_Engineer">
-          <End Role="Engineer" Type="Self.Engineer" Multiplicity="1" />
+        <EntityType Name="user_taak">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="taakID" />
+            <PropertyRef Name="projectID" />
+          </Key>
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="taakID" Type="int" Nullable="false" />
+          <Property Name="projectID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Regestratie_user_taak">
+          <End Role="user_taak" Type="Self.user_taak" Multiplicity="1" />
           <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Engineer">
+            <Principal Role="user_taak">
               <PropertyRef Name="userID" />
-            </Principal>
-            <Dependent Role="Regestratie">
-              <PropertyRef Name="userID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Regestratie_Project">
-          <End Role="Project" Type="Self.Project" Multiplicity="1" />
-          <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Project">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Regestratie">
+              <PropertyRef Name="taakID" />
               <PropertyRef Name="projectID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Regestratie_taak">
-          <End Role="taak" Type="Self.taak" Multiplicity="1" />
-          <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="taak">
-              <PropertyRef Name="taakID" />
             </Principal>
             <Dependent Role="Regestratie">
+              <PropertyRef Name="userID" />
               <PropertyRef Name="taakID" />
+              <PropertyRef Name="projectID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -97,6 +87,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_user_taak_Engineer">
+          <End Role="Engineer" Type="Self.Engineer" Multiplicity="1" />
+          <End Role="user_taak" Type="Self.user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Engineer">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_taak_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="user_taak" Type="Self.user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_taak_taak">
+          <End Role="taak" Type="Self.taak" Multiplicity="1" />
+          <End Role="user_taak" Type="Self.user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="taak">
+              <PropertyRef Name="taakID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="taakID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="logincheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="u" Type="nvarchar" Mode="In" />
           <Parameter Name="p" Type="nvarchar(max)" Mode="In" />
@@ -106,21 +132,26 @@
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Regestratie" EntityType="Self.Regestratie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="taak" EntityType="Self.taak" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Regestratie_Engineer" Association="Self.FK_Regestratie_Engineer">
-            <End Role="Engineer" EntitySet="Engineer" />
-            <End Role="Regestratie" EntitySet="Regestratie" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Regestratie_Project" Association="Self.FK_Regestratie_Project">
-            <End Role="Project" EntitySet="Project" />
-            <End Role="Regestratie" EntitySet="Regestratie" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Regestratie_taak" Association="Self.FK_Regestratie_taak">
-            <End Role="taak" EntitySet="taak" />
+          <EntitySet Name="user_taak" EntityType="Self.user_taak" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Regestratie_user_taak" Association="Self.FK_Regestratie_user_taak">
+            <End Role="user_taak" EntitySet="user_taak" />
             <End Role="Regestratie" EntitySet="Regestratie" />
           </AssociationSet>
           <AssociationSet Name="FK_taak_Project" Association="Self.FK_taak_Project">
             <End Role="Project" EntitySet="Project" />
             <End Role="taak" EntitySet="taak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_taak_Engineer" Association="Self.FK_user_taak_Engineer">
+            <End Role="Engineer" EntitySet="Engineer" />
+            <End Role="user_taak" EntitySet="user_taak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_taak_Project" Association="Self.FK_user_taak_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="user_taak" EntitySet="user_taak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_taak_taak" Association="Self.FK_user_taak_taak">
+            <End Role="taak" EntitySet="taak" />
+            <End Role="user_taak" EntitySet="user_taak" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -139,6 +170,7 @@
           <Property Name="permissie" Type="Boolean" Nullable="false" />
           <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Regestraties" Relationship="Self.FK_Regestratie_Engineer" FromRole="Engineer" ToRole="Regestratie" />
+          <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_user_taak_Engineer" FromRole="Engineer" ToRole="user_taak" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -152,6 +184,7 @@
           <Property Name="afgesloten" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Regestraties" Relationship="Self.FK_Regestratie_Project" FromRole="Project" ToRole="Regestratie" />
           <NavigationProperty Name="taaks" Relationship="Self.FK_taak_Project" FromRole="Project" ToRole="taak" />
+          <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_user_taak_Project" FromRole="Project" ToRole="user_taak" />
         </EntityType>
         <EntityType Name="Regestratie">
           <Key>
@@ -167,6 +200,7 @@
           <NavigationProperty Name="Engineer" Relationship="Self.FK_Regestratie_Engineer" FromRole="Regestratie" ToRole="Engineer" />
           <NavigationProperty Name="Project" Relationship="Self.FK_Regestratie_Project" FromRole="Regestratie" ToRole="Project" />
           <NavigationProperty Name="taak" Relationship="Self.FK_Regestratie_taak" FromRole="Regestratie" ToRole="taak" />
+          <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_Regestratie_user_taak" FromRole="Regestratie" ToRole="user_taak" />
         </EntityType>
         <EntityType Name="taak">
           <Key>
@@ -178,6 +212,7 @@
           <Property Name="omschrijving" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Project" Relationship="Self.FK_taak_Project" FromRole="taak" ToRole="Project" />
           <NavigationProperty Name="Regestraties" Relationship="Self.FK_Regestratie_taak" FromRole="taak" ToRole="Regestratie" />
+          <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_user_taak_taak" FromRole="taak" ToRole="user_taak" />
         </EntityType>
         <Association Name="FK_Regestratie_Engineer">
           <End Role="Engineer" Type="Self.Engineer" Multiplicity="1" />
@@ -252,7 +287,90 @@
             <Parameter Name="u" Mode="In" Type="String" />
             <Parameter Name="p" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="user_taak" EntityType="UrenRegModel.user_taak" />
+          <AssociationSet Name="FK_user_taak_Engineer" Association="UrenRegModel.FK_user_taak_Engineer">
+            <End Role="Engineer" EntitySet="Engineers" />
+            <End Role="user_taak" EntitySet="user_taak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_taak_Project" Association="UrenRegModel.FK_user_taak_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="user_taak" EntitySet="user_taak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regestratie_user_taak" Association="UrenRegModel.FK_Regestratie_user_taak">
+            <End Role="user_taak" EntitySet="user_taak" />
+            <End Role="Regestratie" EntitySet="Regestraties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_taak_taak" Association="UrenRegModel.FK_user_taak_taak">
+            <End Role="taak" EntitySet="taaks" />
+            <End Role="user_taak" EntitySet="user_taak" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="user_taak">
+          <Key>
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="taakID" />
+            <PropertyRef Name="projectID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <Property Name="taakID" Type="Int32" Nullable="false" />
+          <Property Name="projectID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Engineer" Relationship="UrenRegModel.FK_user_taak_Engineer" FromRole="user_taak" ToRole="Engineer" />
+          <NavigationProperty Name="Project" Relationship="UrenRegModel.FK_user_taak_Project" FromRole="user_taak" ToRole="Project" />
+          <NavigationProperty Name="Regestraties" Relationship="UrenRegModel.FK_Regestratie_user_taak" FromRole="user_taak" ToRole="Regestratie" />
+          <NavigationProperty Name="taak" Relationship="UrenRegModel.FK_user_taak_taak" FromRole="user_taak" ToRole="taak" />
+        </EntityType>
+        <Association Name="FK_user_taak_Engineer">
+          <End Type="UrenRegModel.Engineer" Role="Engineer" Multiplicity="1" />
+          <End Type="UrenRegModel.user_taak" Role="user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Engineer">
+              <PropertyRef Name="userID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_taak_Project">
+          <End Type="UrenRegModel.Project" Role="Project" Multiplicity="1" />
+          <End Type="UrenRegModel.user_taak" Role="user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regestratie_user_taak">
+          <End Type="UrenRegModel.user_taak" Role="user_taak" Multiplicity="1" />
+          <End Type="UrenRegModel.Regestratie" Role="Regestratie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_taak">
+              <PropertyRef Name="userID" />
+              <PropertyRef Name="taakID" />
+              <PropertyRef Name="projectID" />
+            </Principal>
+            <Dependent Role="Regestratie">
+              <PropertyRef Name="userID" />
+              <PropertyRef Name="taakID" />
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_taak_taak">
+          <End Type="UrenRegModel.taak" Role="taak" Multiplicity="1" />
+          <End Type="UrenRegModel.user_taak" Role="user_taak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="taak">
+              <PropertyRef Name="taakID" />
+            </Principal>
+            <Dependent Role="user_taak">
+              <PropertyRef Name="taakID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -308,6 +426,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="logincheck" FunctionName="UrenRegModel.Store.logincheck" />
+          <EntitySetMapping Name="user_taak">
+            <EntityTypeMapping TypeName="UrenRegModel.user_taak">
+              <MappingFragment StoreEntitySet="user_taak">
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="taakID" ColumnName="taakID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

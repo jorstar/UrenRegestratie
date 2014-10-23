@@ -141,6 +141,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UrenRegModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="user_taak.cs">
+      <DependentUpon>UrenRegModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>

@@ -18,6 +18,7 @@ namespace UrenRegestratie
         {
             this.Regestraties = new HashSet<Regestratie>();
             this.taaks = new HashSet<taak>();
+            this.user_taak = new HashSet<user_taak>();
         }
     
         public int ID { get; set; }
@@ -29,5 +30,6 @@ namespace UrenRegestratie
     
         public virtual ICollection<Regestratie> Regestraties { get; set; }
         public virtual ICollection<taak> taaks { get; set; }
+        public virtual ICollection<user_taak> user_taak { get; set; }
     }
 }

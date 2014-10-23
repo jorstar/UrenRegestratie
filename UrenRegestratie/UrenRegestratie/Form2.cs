@@ -12,15 +12,23 @@ namespace UrenRegestratie
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public int uid;
+        public Form2(int userid)
         {
             InitializeComponent();
+            uid = userid;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             //en koppel de classes met de comboboxen van urenregistratieform
             //
+            int user = uid;
+            DisposeAllChilds();
+            home newFrm = new home(uid);
+            newFrm.MdiParent = this;
+            newFrm.WindowState = FormWindowState.Maximized;
+            newFrm.Show();
         }
 
 
@@ -72,7 +80,7 @@ namespace UrenRegestratie
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            home newFrm = new home();
+            home newFrm = new home(uid);
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;            
             newFrm.Show();

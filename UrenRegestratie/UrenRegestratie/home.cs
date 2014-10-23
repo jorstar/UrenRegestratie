@@ -12,22 +12,30 @@ namespace UrenRegestratie
 {
     public partial class home : Form
     {
-        public home()
+        public int uid;
+        public home(int userid)
         {
             InitializeComponent();
+            uid = userid;
         }
 
         private void home_Load(object sender, EventArgs e)
         {
-            //UrenRegCon ent = new UrenRegCon();
-            //string home = from p in ent.Projects
-            //              join t in ent.taaks 
-            //              on p.ID equals t.projectID
-            //              where 
-        }
+            UrenRegCon ent = new UrenRegCon();
+            lblVoornaam.Text = (from u in ent.Engineers
+                                where u.userID == uid
+                                select u.voornaam).First();
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            lblAchternaam.Text = (from u in ent.Engineers
+                                  where u.userID == uid
+                                  select u.achternaam).First();
+
+
+            var home = (from ut in ent.user_taak
+                       where ut.userID == uid
+                       select new { project = ut.Project.naam, taak = ut.taak.naam }).ToList();
+            dgvprotaak.DataSource = home;
+
 
         }
     }
