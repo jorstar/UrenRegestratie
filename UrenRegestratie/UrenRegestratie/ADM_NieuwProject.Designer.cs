@@ -1,6 +1,6 @@
 ﻿namespace UrenRegestratie
 {
-    partial class NieuwProject
+    partial class ADM_NieuwProject
     {
         /// <summary>
         /// Required designer variable.
@@ -40,12 +40,13 @@
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.dateTimeEind = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 53);
+            this.label2.Location = new System.Drawing.Point(17, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 1;
@@ -63,7 +64,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 189);
+            this.label3.Location = new System.Drawing.Point(12, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -72,7 +73,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 216);
+            this.label4.Location = new System.Drawing.Point(12, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 3;
@@ -80,14 +81,14 @@
             // 
             // txtProjectnaam
             // 
-            this.txtProjectnaam.Location = new System.Drawing.Point(87, 16);
+            this.txtProjectnaam.Location = new System.Drawing.Point(87, 27);
             this.txtProjectnaam.Name = "txtProjectnaam";
             this.txtProjectnaam.Size = new System.Drawing.Size(267, 20);
             this.txtProjectnaam.TabIndex = 4;
             // 
             // txtProjectomschrijving
             // 
-            this.txtProjectomschrijving.Location = new System.Drawing.Point(15, 69);
+            this.txtProjectomschrijving.Location = new System.Drawing.Point(12, 85);
             this.txtProjectomschrijving.Multiline = true;
             this.txtProjectomschrijving.Name = "txtProjectomschrijving";
             this.txtProjectomschrijving.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -97,7 +98,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(84, 170);
+            this.label9.Location = new System.Drawing.Point(84, 174);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 13);
             this.label9.TabIndex = 21;
@@ -106,7 +107,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(157, 170);
+            this.label10.Location = new System.Drawing.Point(157, 174);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 22;
@@ -115,7 +116,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(235, 170);
+            this.label11.Location = new System.Drawing.Point(235, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(24, 13);
             this.label11.TabIndex = 23;
@@ -133,19 +134,27 @@
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(87, 189);
+            this.dateTimeBegin.Location = new System.Drawing.Point(87, 193);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeBegin.TabIndex = 25;
             // 
             // dateTimeEind
             // 
-            this.dateTimeEind.Location = new System.Drawing.Point(87, 210);
+            this.dateTimeEind.Location = new System.Drawing.Point(87, 214);
             this.dateTimeEind.Name = "dateTimeEind";
             this.dateTimeEind.Size = new System.Drawing.Size(200, 20);
             this.dateTimeEind.TabIndex = 26;
             // 
-            // NieuwProject
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ADM_NieuwProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,8 +171,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NieuwProject";
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "ADM_NieuwProject";
             this.Text = "NieuwProject";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,5 +195,6 @@
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
         private System.Windows.Forms.DateTimePicker dateTimeEind;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

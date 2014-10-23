@@ -61,11 +61,11 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gebruiker.cs">
+    <Compile Include="ADM_Gebruiker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gebruiker.Designer.cs">
-      <DependentUpon>Gebruiker.cs</DependentUpon>
+    <Compile Include="ADM_Gebruiker.Designer.cs">
+      <DependentUpon>ADM_Gebruiker.cs</DependentUpon>
     </Compile>
     <Compile Include="home.cs">
       <SubType>Form</SubType>
@@ -79,33 +79,33 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NieuweGebruiker.cs">
+    <Compile Include="ADM_NieuweGebruiker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NieuweGebruiker.Designer.cs">
-      <DependentUpon>NieuweGebruiker.cs</DependentUpon>
+    <Compile Include="ADM_NieuweGebruiker.Designer.cs">
+      <DependentUpon>ADM_NieuweGebruiker.cs</DependentUpon>
     </Compile>
-    <Compile Include="NieuweTaken.cs">
+    <Compile Include="ADM_NieuweTaken.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NieuweTaken.Designer.cs">
-      <DependentUpon>NieuweTaken.cs</DependentUpon>
+    <Compile Include="ADM_NieuweTaken.Designer.cs">
+      <DependentUpon>ADM_NieuweTaken.cs</DependentUpon>
     </Compile>
-    <Compile Include="NieuwProject.cs">
+    <Compile Include="ADM_NieuwProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NieuwProject.Designer.cs">
-      <DependentUpon>NieuwProject.cs</DependentUpon>
+    <Compile Include="ADM_NieuwProject.Designer.cs">
+      <DependentUpon>ADM_NieuwProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs">
       <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="projectenForm.cs">
+    <Compile Include="ADM_projectenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="projectenForm.Designer.cs">
-      <DependentUpon>projectenForm.cs</DependentUpon>
+    <Compile Include="ADM_projectenForm.Designer.cs">
+      <DependentUpon>ADM_projectenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regestratie.cs">
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gebruiker.resx">
-      <DependentUpon>Gebruiker.cs</DependentUpon>
+    <EmbeddedResource Include="ADM_Gebruiker.resx">
+      <DependentUpon>ADM_Gebruiker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
@@ -156,17 +156,17 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NieuweGebruiker.resx">
-      <DependentUpon>NieuweGebruiker.cs</DependentUpon>
+    <EmbeddedResource Include="ADM_NieuweGebruiker.resx">
+      <DependentUpon>ADM_NieuweGebruiker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NieuweTaken.resx">
-      <DependentUpon>NieuweTaken.cs</DependentUpon>
+    <EmbeddedResource Include="ADM_NieuweTaken.resx">
+      <DependentUpon>ADM_NieuweTaken.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NieuwProject.resx">
-      <DependentUpon>NieuwProject.cs</DependentUpon>
+    <EmbeddedResource Include="ADM_NieuwProject.resx">
+      <DependentUpon>ADM_NieuwProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="projectenForm.resx">
-      <DependentUpon>projectenForm.cs</DependentUpon>
+    <EmbeddedResource Include="ADM_projectenForm.resx">
+      <DependentUpon>ADM_projectenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -23,7 +23,7 @@ namespace UrenRegestratie
         {
             //en koppel de classes met de comboboxen van urenregistratieform
             //
-            int user = uid;
+            
             DisposeAllChilds();
             home newFrm = new home(uid);
             newFrm.MdiParent = this;
@@ -44,7 +44,7 @@ namespace UrenRegestratie
         private void deProjectenToolStripMenuItem_Click(object sender, EventArgs e)
         {
                 DisposeAllChilds();
-                projectenForm newFrm = new projectenForm();
+                ADM_projectenForm newFrm = new ADM_projectenForm();
                 newFrm.MdiParent = this;
                 newFrm.WindowState = FormWindowState.Maximized;
                 newFrm.Show();
@@ -53,7 +53,7 @@ namespace UrenRegestratie
         private void nieuwProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            NieuwProject newFrm = new NieuwProject();
+            ADM_NieuwProject newFrm = new ADM_NieuwProject();
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();
@@ -62,7 +62,7 @@ namespace UrenRegestratie
         private void deGebruikersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            Gebruiker newFrm = new Gebruiker();
+            ADM_Gebruiker newFrm = new ADM_Gebruiker();
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();
@@ -71,7 +71,7 @@ namespace UrenRegestratie
         private void nieuweGebruikerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            NieuweGebruiker newFrm = new NieuweGebruiker();
+            ADM_NieuweGebruiker newFrm = new ADM_NieuweGebruiker();
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();

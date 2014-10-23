@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace UrenRegestratie
 {
-    public partial class projectenForm : Form
+    public partial class ADM_projectenForm : Form
     {
 
-        public projectenForm()
+        public ADM_projectenForm()
         {
             InitializeComponent();
         }
@@ -51,6 +51,15 @@ namespace UrenRegestratie
         private void btnProjAfsl_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            ADM_NieuwProject newFrm = new ADM_NieuwProject();
+            newFrm.MdiParent = Form2.ActiveForm;
+            newFrm.WindowState = FormWindowState.Maximized;
+            newFrm.Show();
         }
     }
 }

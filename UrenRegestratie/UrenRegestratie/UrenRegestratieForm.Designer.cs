@@ -41,6 +41,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // combUser
@@ -154,11 +156,29 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 33;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
+            this.menuStrip1.TabIndex = 34;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(179, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(199, 13);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "peter: moet automatish van de ingelogde";
+            // 
             // UrenRegestratieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.label6);
@@ -172,7 +192,9 @@
             this.Controls.Add(this.combTaak);
             this.Controls.Add(this.combProject);
             this.Controls.Add(this.combUser);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "UrenRegestratieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UrenRegestratieForm";
@@ -197,5 +219,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -31,13 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.combProjecten = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Location = new System.Drawing.Point(11, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
@@ -46,7 +47,7 @@
             // combProjecten
             // 
             this.combProjecten.FormattingEnabled = true;
-            this.combProjecten.Location = new System.Drawing.Point(71, 12);
+            this.combProjecten.Location = new System.Drawing.Point(72, 27);
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
@@ -55,10 +56,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(655, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(655, 232);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // Taken
             // 
@@ -68,7 +77,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.combProjecten);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Taken";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Taken";
@@ -84,5 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox combProjecten;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

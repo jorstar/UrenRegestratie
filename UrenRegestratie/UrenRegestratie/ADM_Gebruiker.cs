@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UrenRegestratie
 {
-    public partial class Gebruiker : Form
+    public partial class ADM_Gebruiker : Form
     {
-        public Gebruiker()
+        public ADM_Gebruiker()
         {
             InitializeComponent();
         }

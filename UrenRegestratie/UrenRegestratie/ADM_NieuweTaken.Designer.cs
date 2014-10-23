@@ -1,6 +1,6 @@
 ﻿namespace UrenRegestratie
 {
-    partial class NieuweTaken
+    partial class ADM_NieuweTaken
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,13 @@
             this.txtTakenOmschrijving = new System.Windows.Forms.TextBox();
             this.combProjecten = new System.Windows.Forms.ComboBox();
             this.btnOpslaan = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Location = new System.Drawing.Point(12, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // txtTakenNaam
             // 
-            this.txtTakenNaam.Location = new System.Drawing.Point(78, 66);
+            this.txtTakenNaam.Location = new System.Drawing.Point(78, 72);
             this.txtTakenNaam.Name = "txtTakenNaam";
             this.txtTakenNaam.Size = new System.Drawing.Size(115, 20);
             this.txtTakenNaam.TabIndex = 3;
@@ -83,7 +84,7 @@
             // combProjecten
             // 
             this.combProjecten.FormattingEnabled = true;
-            this.combProjecten.Location = new System.Drawing.Point(78, 21);
+            this.combProjecten.Location = new System.Drawing.Point(78, 27);
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(115, 21);
             this.combProjecten.TabIndex = 5;
@@ -98,7 +99,15 @@
             this.btnOpslaan.UseVisualStyleBackColor = true;
             this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
-            // NieuweTaken
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ADM_NieuweTaken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,8 +119,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NieuweTaken";
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "ADM_NieuweTaken";
             this.Text = "NieuweTaken";
             this.Load += new System.EventHandler(this.NieuweTaken_Load);
             this.ResumeLayout(false);
@@ -128,5 +139,6 @@
         private System.Windows.Forms.TextBox txtTakenOmschrijving;
         private System.Windows.Forms.ComboBox combProjecten;
         private System.Windows.Forms.Button btnOpslaan;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
