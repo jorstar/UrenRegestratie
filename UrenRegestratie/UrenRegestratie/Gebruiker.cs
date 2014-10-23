@@ -21,5 +21,16 @@ namespace UrenRegestratie
         {
 
         }
+
+        private void Gebruiker_Load(object sender, EventArgs e)
+        {
+            UrenRegCon EntityModel = new UrenRegCon();
+
+            var users = (from p in EntityModel.Engineers
+                         select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
+            combGebruikers.DisplayMember = "userid";
+            combGebruikers.ValueMember = "gebruikersnaam";
+            combGebruikers.DataSource = users;
+        }
     }
 }

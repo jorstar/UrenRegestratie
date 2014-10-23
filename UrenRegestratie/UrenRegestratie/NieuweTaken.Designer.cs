@@ -113,6 +113,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NieuweTaken";
             this.Text = "NieuweTaken";
+            this.Load += new System.EventHandler(this.NieuweTaken_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

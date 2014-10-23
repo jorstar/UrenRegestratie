@@ -24,7 +24,12 @@ namespace UrenRegestratie
 
         private void Taken_Load(object sender, EventArgs e)
         {
-
+            UrenRegCon EntityModel = new UrenRegCon();
+            var projectens = (from p in EntityModel.taaks
+                              select new { taakid = p.taakID, taaknaam = p.naam }).ToList();
+            combProjecten.DisplayMember = "taaknaam";
+            combProjecten.ValueMember = "taakid";
+            combProjecten.DataSource = projectens;
         }
     }
 }
