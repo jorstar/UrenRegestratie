@@ -19,7 +19,34 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            UrenRegCon fw = new UrenRegCon();
+            taak taa = new taak();
 
+            taa.taakID = 2;                                      //hoe bepaal ik welk nummer nu komt?
+
+            taa.projectID = combProjecten.SelectedValue;
+
+            if (txtTakenNaam.Text != "")
+            {
+                taa.naam = txtTakenNaam.Text;
+            }
+            else
+            {
+                MessageBox.Show("Vul een naam in.");
+            }
+
+            if (txtTakenOmschrijving.Text != "")
+            {
+                taa.omschrijving = txtTakenOmschrijving.Text;
+            }
+            else
+            {
+                MessageBox.Show("Vul een omschrijving in.");
+            }
+
+
+            fw.taaks.Add(taa);
+            fw.SaveChanges(); 
         }
 
         private void NieuweTaken_Load(object sender, EventArgs e)

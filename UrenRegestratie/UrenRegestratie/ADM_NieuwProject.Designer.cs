@@ -34,9 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtProjectnaam = new System.Windows.Forms.TextBox();
             this.txtProjectomschrijving = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.dateTimeEind = new System.Windows.Forms.DateTimePicker();
@@ -95,33 +92,6 @@
             this.txtProjectomschrijving.Size = new System.Drawing.Size(339, 86);
             this.txtProjectomschrijving.TabIndex = 5;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(84, 174);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "dag";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(157, 174);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "maand";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(235, 174);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 13);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "jaar";
-            // 
             // btnOpslaan
             // 
             this.btnOpslaan.Location = new System.Drawing.Point(15, 250);
@@ -162,9 +132,6 @@
             this.Controls.Add(this.dateTimeEind);
             this.Controls.Add(this.dateTimeBegin);
             this.Controls.Add(this.btnOpslaan);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtProjectomschrijving);
             this.Controls.Add(this.txtProjectnaam);
             this.Controls.Add(this.label4);
@@ -189,9 +156,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtProjectnaam;
         private System.Windows.Forms.TextBox txtProjectomschrijving;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
         private System.Windows.Forms.DateTimePicker dateTimeEind;

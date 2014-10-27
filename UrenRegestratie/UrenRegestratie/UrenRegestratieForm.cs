@@ -48,7 +48,65 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            UrenRegCon fw = new UrenRegCon();
+            Regestratie reg = new Regestratie();
 
+            reg.urenID = 2;                                      //hoe bepaal ik welk nummer nu komt?
+
+            
+                reg.userID = uid;
+            
+
+            if (combProject.SelectedValue != "")
+            {
+                reg.projectID = combProject.SelectedItem;
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een project.");
+            }
+
+            if (combTaak.SelectedValue != "")
+            {
+                reg.taakID = combTaak.SelectedValue;
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een taak.");
+            }
+
+            if (dateTimePicker1.Text != "")
+            {
+                reg.datum = dateTimePicker1.Value;
+            }
+            else
+            {
+                MessageBox.Show("Vul een datum in.");
+            }
+
+            if (txtVerantwoording.Text != "")
+            {
+                reg.verantwoording = txtVerantwoording.Text;
+            }
+            else
+            {
+                MessageBox.Show("Vul je verantwoording in.");
+            }
+
+            if (txtAantalUren.Text != "")
+            {
+                reg.uren = Convert.ToInt16(txtAantalUren.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vul uw aantal uren in.");
+            }
+
+
+
+
+            fw.Regestraties.Add(reg);
+            fw.SaveChanges(); 
         }
     }
 }
