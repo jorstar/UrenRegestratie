@@ -51,15 +51,13 @@ namespace UrenRegestratie
             UrenRegCon fw = new UrenRegCon();
             Regestratie reg = new Regestratie();
 
-            reg.urenID = 2;                                      //hoe bepaal ik welk nummer nu komt?
-
             
-                reg.userID = uid;
+            reg.userID = uid;
             
 
             if (combProject.SelectedValue != "")
             {
-                reg.projectID = combProject.SelectedItem;
+                reg.projectID = Convert.ToInt16(combProject.SelectedValue);
             }
             else
             {
@@ -68,7 +66,7 @@ namespace UrenRegestratie
 
             if (combTaak.SelectedValue != "")
             {
-                reg.taakID = combTaak.SelectedValue;
+                reg.taakID = Convert.ToInt16(combTaak.SelectedValue);
             }
             else
             {

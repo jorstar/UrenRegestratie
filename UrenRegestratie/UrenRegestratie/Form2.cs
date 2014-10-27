@@ -21,9 +21,6 @@ namespace UrenRegestratie
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //en koppel de classes met de comboboxen van urenregistratieform
-            //
-            
             DisposeAllChilds();
             home newFrm = new home(uid);
             newFrm.MdiParent = this;

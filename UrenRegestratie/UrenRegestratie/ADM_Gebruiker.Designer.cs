@@ -33,6 +33,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnVerwijderGebruiker = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.radioBNiet = new System.Windows.Forms.RadioButton();
+            this.radioBWel = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +84,45 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
+            // radioBNiet
+            // 
+            this.radioBNiet.AutoSize = true;
+            this.radioBNiet.Location = new System.Drawing.Point(470, 28);
+            this.radioBNiet.Name = "radioBNiet";
+            this.radioBNiet.Size = new System.Drawing.Size(42, 17);
+            this.radioBNiet.TabIndex = 5;
+            this.radioBNiet.TabStop = true;
+            this.radioBNiet.Text = "niet";
+            this.radioBNiet.UseVisualStyleBackColor = true;
+            // 
+            // radioBWel
+            // 
+            this.radioBWel.AutoSize = true;
+            this.radioBWel.Location = new System.Drawing.Point(423, 28);
+            this.radioBWel.Name = "radioBWel";
+            this.radioBWel.Size = new System.Drawing.Size(41, 17);
+            this.radioBWel.TabIndex = 6;
+            this.radioBWel.TabStop = true;
+            this.radioBWel.Text = "wel";
+            this.radioBWel.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Laat deactive gebruikers zien:";
+            // 
             // ADM_Gebruiker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.radioBWel);
+            this.Controls.Add(this.radioBNiet);
             this.Controls.Add(this.btnVerwijderGebruiker);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -109,5 +146,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnVerwijderGebruiker;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.RadioButton radioBNiet;
+        private System.Windows.Forms.RadioButton radioBWel;
+        private System.Windows.Forms.Label label2;
     }
 }

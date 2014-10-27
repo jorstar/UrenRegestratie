@@ -22,9 +22,8 @@ namespace UrenRegestratie
             UrenRegCon fw = new UrenRegCon();
             taak taa = new taak();
 
-            taa.taakID = 2;                                      //hoe bepaal ik welk nummer nu komt?
 
-            taa.projectID = combProjecten.SelectedValue;
+            taa.projectID = Convert.ToInt16(combProjecten.SelectedValue);
 
             if (txtTakenNaam.Text != "")
             {

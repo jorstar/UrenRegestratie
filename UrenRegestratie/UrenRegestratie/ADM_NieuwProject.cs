@@ -22,7 +22,6 @@ namespace UrenRegestratie
             UrenRegCon fw = new UrenRegCon();
             Project proj = new Project();
 
-            proj.ID = 2;                                      //hoe bepaal ik welk nummer nu komt?
 
             if (txtProjectnaam.Text != "")
             {
