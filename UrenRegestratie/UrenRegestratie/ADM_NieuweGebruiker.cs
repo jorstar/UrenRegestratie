@@ -25,7 +25,6 @@ namespace UrenRegestratie
             UrenRegCon fw = new UrenRegCon();
             Engineer en = new Engineer();
 
-            en.userID = 2;                    //hoe bepaal ik welk nummer nu komt?
 
             if(txtVoornaam.Text != "")
             {
@@ -92,5 +91,7 @@ namespace UrenRegestratie
             }
 
         }
+
+        
     }
 }

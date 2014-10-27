@@ -34,8 +34,8 @@
             this.GridviewProjecten = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioBWel = new System.Windows.Forms.RadioButton();
+            this.radioBNiet = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridviewProjecten)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +57,6 @@
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
-            this.combProjecten.SelectedIndexChanged += new System.EventHandler(this.combProjecten_SelectedIndexChanged);
-            this.combProjecten.Enter += new System.EventHandler(this.combProjecten_Enter);
             // 
             // label1
             // 
@@ -68,7 +66,6 @@
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "projecten:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // GridviewProjecten
             // 
@@ -77,7 +74,6 @@
             this.GridviewProjecten.Name = "GridviewProjecten";
             this.GridviewProjecten.Size = new System.Drawing.Size(656, 221);
             this.GridviewProjecten.TabIndex = 4;
-            this.GridviewProjecten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridviewProjecten_CellContentClick);
             // 
             // button1
             // 
@@ -97,27 +93,29 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // radioButton1
+            // radioBWel
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(464, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(41, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "wel";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioBWel.AutoSize = true;
+            this.radioBWel.Location = new System.Drawing.Point(464, 44);
+            this.radioBWel.Name = "radioBWel";
+            this.radioBWel.Size = new System.Drawing.Size(41, 17);
+            this.radioBWel.TabIndex = 7;
+            this.radioBWel.Text = "wel";
+            this.radioBWel.UseVisualStyleBackColor = true;
+            this.radioBWel.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // radioBNiet
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(511, 44);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "niet";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioBNiet.AutoSize = true;
+            this.radioBNiet.Checked = true;
+            this.radioBNiet.Location = new System.Drawing.Point(511, 44);
+            this.radioBNiet.Name = "radioBNiet";
+            this.radioBNiet.Size = new System.Drawing.Size(42, 17);
+            this.radioBNiet.TabIndex = 8;
+            this.radioBNiet.TabStop = true;
+            this.radioBNiet.Text = "niet";
+            this.radioBNiet.UseVisualStyleBackColor = true;
+            this.radioBNiet.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label2
             // 
@@ -134,8 +132,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioBNiet);
+            this.Controls.Add(this.radioBWel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.GridviewProjecten);
             this.Controls.Add(this.label1);
@@ -162,8 +160,8 @@
         private System.Windows.Forms.DataGridView GridviewProjecten;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioBWel;
+        private System.Windows.Forms.RadioButton radioBNiet;
         private System.Windows.Forms.Label label2;
     }
 }

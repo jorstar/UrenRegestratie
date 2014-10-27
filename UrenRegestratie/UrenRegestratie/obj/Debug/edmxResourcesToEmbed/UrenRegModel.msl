@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="UrenRegModelStoreContainer" CdmEntityContainer="UrenRegCon">
+  <EntityContainerMapping StorageEntityContainer="URENREGISTRATIEModelStoreContainer" CdmEntityContainer="UrenRegCon">
     <EntitySetMapping Name="Engineers">
-      <EntityTypeMapping TypeName="UrenRegModel.Engineer">
+      <EntityTypeMapping TypeName="URENREGISTRATIEModel.Engineer">
         <MappingFragment StoreEntitySet="Engineer">
-          <ScalarProperty Name="actief" ColumnName="actief" />
           <ScalarProperty Name="userID" ColumnName="userID" />
           <ScalarProperty Name="voornaam" ColumnName="voornaam" />
           <ScalarProperty Name="achternaam" ColumnName="achternaam" />
@@ -12,11 +11,12 @@
           <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
           <ScalarProperty Name="permissie" ColumnName="permissie" />
           <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="actief" ColumnName="actief" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Projects">
-      <EntityTypeMapping TypeName="UrenRegModel.Project">
+      <EntityTypeMapping TypeName="URENREGISTRATIEModel.Project">
         <MappingFragment StoreEntitySet="Project">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="naam" ColumnName="naam" />
@@ -28,7 +28,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Regestraties">
-      <EntityTypeMapping TypeName="UrenRegModel.Regestratie">
+      <EntityTypeMapping TypeName="URENREGISTRATIEModel.Regestratie">
         <MappingFragment StoreEntitySet="Regestratie">
           <ScalarProperty Name="urenID" ColumnName="urenID" />
           <ScalarProperty Name="userID" ColumnName="userID" />
@@ -41,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="taaks">
-      <EntityTypeMapping TypeName="UrenRegModel.taak">
+      <EntityTypeMapping TypeName="URENREGISTRATIEModel.taak">
         <MappingFragment StoreEntitySet="taak">
           <ScalarProperty Name="taakID" ColumnName="taakID" />
           <ScalarProperty Name="projectID" ColumnName="projectID" />
@@ -50,13 +50,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="logincheck" FunctionName="UrenRegModel.Store.logincheck" />
     <EntitySetMapping Name="user_taak">
-      <EntityTypeMapping TypeName="UrenRegModel.user_taak">
+      <EntityTypeMapping TypeName="URENREGISTRATIEModel.user_taak">
         <MappingFragment StoreEntitySet="user_taak">
-          <ScalarProperty Name="projectID" ColumnName="projectID" />
-          <ScalarProperty Name="taakID" ColumnName="taakID" />
           <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="taakID" ColumnName="taakID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

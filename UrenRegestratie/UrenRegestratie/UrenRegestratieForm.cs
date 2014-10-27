@@ -42,6 +42,20 @@ namespace UrenRegestratie
             combTaak.DataSource = taak;
         }
 
+        private void combProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UrenRegCon EntityModel = new UrenRegCon();
+
+            int projecid = Convert.ToInt16(combProject.SelectedValue);
+
+            var taak = (from ut in EntityModel.user_taak
+                        where ut.Engineer.userID == uid && ut.Project.ID == projecid
+                        select new { taakid = ut.taak.taakID, taaknaam = ut.taak.naam }).ToList();
+            combTaak.DisplayMember = "taaknaam";
+            combTaak.ValueMember = "taakid";
+            combTaak.DataSource = taak;
+        }
+
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
             UrenRegCon fw = new UrenRegCon();
@@ -103,9 +117,10 @@ namespace UrenRegestratie
             fw.SaveChanges(); 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+        
 
-        }
+        
+
+        
     }
 }

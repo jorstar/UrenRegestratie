@@ -22,9 +22,6 @@ namespace UrenRegestratie
         public string verantwoording { get; set; }
         public int uren { get; set; }
     
-        public virtual Engineer Engineer { get; set; }
-        public virtual Project Project { get; set; }
-        public virtual taak taak { get; set; }
         public virtual user_taak user_taak { get; set; }
     }
 }

@@ -4,20 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ea9e72666434c10826d69365687b4e1" Name="Diagram1" ZoomLevel="95">
-        <EntityTypeShape EntityType="UrenRegModel.Engineer" Width="1.5" PointX="6.625" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UrenRegModel.Project" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UrenRegModel.Regestratie" Width="1.5" PointX="0.625" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UrenRegModel.taak" Width="1.5" PointX="6.875" PointY="6.625" IsExpanded="true" />
-        <AssociationConnector Association="UrenRegModel.FK_Regestratie_Engineer" ManuallyRouted="false" />
-        <AssociationConnector Association="UrenRegModel.FK_Regestratie_Project" ManuallyRouted="false" />
-        <AssociationConnector Association="UrenRegModel.FK_taak_Project" ManuallyRouted="false" />
-        <AssociationConnector Association="UrenRegModel.FK_Regestratie_taak" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="UrenRegModel.user_taak" Width="1.5" PointX="4" PointY="5.5" />
-        <AssociationConnector Association="UrenRegModel.FK_user_taak_Engineer" />
-        <AssociationConnector Association="UrenRegModel.FK_user_taak_Project" />
-        <AssociationConnector Association="UrenRegModel.FK_Regestratie_user_taak" />
-        <AssociationConnector Association="UrenRegModel.FK_user_taak_taak" />
+      <Diagram DiagramId="2264d487340c4c758f2fdc99d7b3c429" Name="Diagram1">
+        <EntityTypeShape EntityType="URENREGISTRATIEModel.Engineer" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="URENREGISTRATIEModel.Project" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="URENREGISTRATIEModel.Regestratie" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="URENREGISTRATIEModel.taak" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="URENREGISTRATIEModel.user_taak" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="URENREGISTRATIEModel.FK_user_taak_Engineer" ManuallyRouted="false" />
+        <AssociationConnector Association="URENREGISTRATIEModel.FK_taak_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="URENREGISTRATIEModel.FK_user_taak_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="URENREGISTRATIEModel.FK_Regestratie_user_taak" ManuallyRouted="false" />
+        <AssociationConnector Association="URENREGISTRATIEModel.FK_user_taak_taak" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

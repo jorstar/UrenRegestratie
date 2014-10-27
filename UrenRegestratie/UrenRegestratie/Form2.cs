@@ -21,6 +21,20 @@ namespace UrenRegestratie
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            UrenRegCon EntityModel = new UrenRegCon();
+
+            var Adofnor = (from p in EntityModel.Engineers
+                         where p.userID == uid
+                           select p).First();
+
+            Engineer eng = (Engineer)Adofnor;
+            if(!eng.permissie)
+            {
+                projectenToolStripMenuItem.Visible = false;
+                takenToolStripMenuItem.Visible = false;
+                gebruikersToolStripMenuItem.Visible = false;
+            }
+
             DisposeAllChilds();
             home newFrm = new home(uid);
             newFrm.MdiParent = this;

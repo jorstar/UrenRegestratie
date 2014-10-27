@@ -48,6 +48,7 @@
             this.combProject.Name = "combProject";
             this.combProject.Size = new System.Drawing.Size(121, 21);
             this.combProject.TabIndex = 1;
+            this.combProject.SelectedIndexChanged += new System.EventHandler(this.combProject_SelectedIndexChanged);
             // 
             // combTaak
             // 

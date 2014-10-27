@@ -12,9 +12,6 @@ namespace UrenRegestratie
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
-    using System.Data.Objects.DataClasses;
-    using System.Linq;
     
     public partial class UrenRegCon : DbContext
     {
@@ -33,18 +30,5 @@ namespace UrenRegestratie
         public DbSet<Regestratie> Regestraties { get; set; }
         public DbSet<taak> taaks { get; set; }
         public DbSet<user_taak> user_taak { get; set; }
-    
-        public virtual int logincheck(string u, string p)
-        {
-            var uParameter = u != null ?
-                new ObjectParameter("u", u) :
-                new ObjectParameter("u", typeof(string));
-    
-            var pParameter = p != null ?
-                new ObjectParameter("p", p) :
-                new ObjectParameter("p", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("logincheck", uParameter, pParameter);
-        }
     }
 }

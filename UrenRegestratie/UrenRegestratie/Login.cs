@@ -56,18 +56,13 @@ namespace UrenRegestratie
                 var Gebruiker = (from E in EntityModel.Engineers
                                  where E.gebruikersnaam == user && E.wachtwoord == pass
                                  select E.userID).First();
-                //if (Gebruiker != null)
-                //{
+               
                 int uid = Convert.ToInt16(Gebruiker);
 
                     Form2 frm = new Form2(uid);
                     frm.Show();
                     this.Hide();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Incorrect username / password");
-                //}
+                
                 
             }
             catch(EntityException ex)
@@ -95,10 +90,7 @@ namespace UrenRegestratie
 
         }
 
-        private void tbPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void tbPassword_KeyDown(object sender, KeyEventArgs e)
         {

@@ -77,14 +77,14 @@
             // deProjectenToolStripMenuItem
             // 
             this.deProjectenToolStripMenuItem.Name = "deProjectenToolStripMenuItem";
-            this.deProjectenToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.deProjectenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deProjectenToolStripMenuItem.Text = "de projecten";
             this.deProjectenToolStripMenuItem.Click += new System.EventHandler(this.deProjectenToolStripMenuItem_Click);
             // 
             // nieuwProjectToolStripMenuItem
             // 
             this.nieuwProjectToolStripMenuItem.Name = "nieuwProjectToolStripMenuItem";
-            this.nieuwProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.nieuwProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nieuwProjectToolStripMenuItem.Text = "nieuw project";
             this.nieuwProjectToolStripMenuItem.Click += new System.EventHandler(this.nieuwProjectToolStripMenuItem_Click);
             // 
@@ -99,7 +99,7 @@
             // deTakenToolStripMenuItem
             // 
             this.deTakenToolStripMenuItem.Name = "deTakenToolStripMenuItem";
-            this.deTakenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deTakenToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.deTakenToolStripMenuItem.Text = "nieuwe taak";
             this.deTakenToolStripMenuItem.Click += new System.EventHandler(this.deTakenToolStripMenuItem_Click);
             // 
