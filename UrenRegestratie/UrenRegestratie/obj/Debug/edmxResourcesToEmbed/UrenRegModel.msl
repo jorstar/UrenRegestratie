@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Engineers">
       <EntityTypeMapping TypeName="UrenRegModel.Engineer">
         <MappingFragment StoreEntitySet="Engineer">
+          <ScalarProperty Name="actief" ColumnName="actief" />
           <ScalarProperty Name="userID" ColumnName="userID" />
           <ScalarProperty Name="voornaam" ColumnName="voornaam" />
           <ScalarProperty Name="achternaam" ColumnName="achternaam" />

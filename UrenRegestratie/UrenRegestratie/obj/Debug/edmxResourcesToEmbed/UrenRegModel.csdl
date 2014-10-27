@@ -13,6 +13,7 @@
     <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Regestraties" Relationship="Self.FK_Regestratie_Engineer" FromRole="Engineer" ToRole="Regestratie" />
     <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_user_taak_Engineer" FromRole="Engineer" ToRole="user_taak" />
+    <Property Name="actief" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Project">
     <Key>

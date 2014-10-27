@@ -106,5 +106,10 @@ namespace UrenRegestratie
             fw.Regestraties.Add(reg);
             fw.SaveChanges(); 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

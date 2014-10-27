@@ -9,13 +9,14 @@
           <Key>
             <PropertyRef Name="userID" />
           </Key>
-          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="voornaam" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="achternaam" Type="nvarchar" MaxLength="220" Nullable="false" />
           <Property Name="gebruikersnaam" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="wachtwoord" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="permissie" Type="bit" Nullable="false" />
           <Property Name="foto" Type="image" />
+          <Property Name="actief" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -44,7 +45,7 @@
           <Key>
             <PropertyRef Name="taakID" />
           </Key>
-          <Property Name="taakID" Type="int" Nullable="false" />
+          <Property Name="taakID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="projectID" Type="int" Nullable="false" />
           <Property Name="naam" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="omschrijving" Type="nvarchar(max)" />
@@ -171,6 +172,7 @@
           <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Regestraties" Relationship="Self.FK_Regestratie_Engineer" FromRole="Engineer" ToRole="Regestratie" />
           <NavigationProperty Name="user_taak" Relationship="UrenRegModel.FK_user_taak_Engineer" FromRole="Engineer" ToRole="user_taak" />
+          <Property Name="actief" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -380,6 +382,7 @@
           <EntitySetMapping Name="Engineers">
             <EntityTypeMapping TypeName="UrenRegModel.Engineer">
               <MappingFragment StoreEntitySet="Engineer">
+                <ScalarProperty Name="actief" ColumnName="actief" />
                 <ScalarProperty Name="userID" ColumnName="userID" />
                 <ScalarProperty Name="voornaam" ColumnName="voornaam" />
                 <ScalarProperty Name="achternaam" ColumnName="achternaam" />

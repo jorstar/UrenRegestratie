@@ -27,6 +27,7 @@ namespace UrenRegestratie
         public string wachtwoord { get; set; }
         public bool permissie { get; set; }
         public byte[] foto { get; set; }
+        public bool actief { get; set; }
     
         public virtual ICollection<Regestratie> Regestraties { get; set; }
         public virtual ICollection<user_taak> user_taak { get; set; }

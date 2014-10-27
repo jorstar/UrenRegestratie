@@ -32,7 +32,7 @@ namespace UrenRegestratie
         private void urenregistratieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            UrenRegestratieForm newFrm = new UrenRegestratieForm();
+            UrenRegestratieForm newFrm = new UrenRegestratieForm(uid);
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();

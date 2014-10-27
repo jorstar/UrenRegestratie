@@ -49,16 +49,6 @@ namespace UrenRegestratie
             {
                 MessageBox.Show("Vul een begindatum in.");
             }
-
-            if (dateTimeEind.Text != "")
-            {
-                proj.eindDatum = dateTimeBegin.Value;
-            }
-            else
-            {
-                MessageBox.Show("Vul een eind datum in.");
-            }
-
             proj.afgesloten = false;
             
 

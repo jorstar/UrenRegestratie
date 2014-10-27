@@ -31,19 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtProjectnaam = new System.Windows.Forms.TextBox();
             this.txtProjectomschrijving = new System.Windows.Forms.TextBox();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeEind = new System.Windows.Forms.DateTimePicker();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
@@ -67,18 +64,9 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Begindatum:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 220);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Einddatum:";
-            // 
             // txtProjectnaam
             // 
-            this.txtProjectnaam.Location = new System.Drawing.Point(87, 27);
+            this.txtProjectnaam.Location = new System.Drawing.Point(87, 32);
             this.txtProjectnaam.Name = "txtProjectnaam";
             this.txtProjectnaam.Size = new System.Drawing.Size(267, 20);
             this.txtProjectnaam.TabIndex = 4;
@@ -109,38 +97,19 @@
             this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeBegin.TabIndex = 25;
             // 
-            // dateTimeEind
-            // 
-            this.dateTimeEind.Location = new System.Drawing.Point(87, 214);
-            this.dateTimeEind.Name = "dateTimeEind";
-            this.dateTimeEind.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeEind.TabIndex = 26;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
-            this.menuStrip1.TabIndex = 27;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // ADM_NieuwProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
-            this.Controls.Add(this.dateTimeEind);
             this.Controls.Add(this.dateTimeBegin);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.txtProjectomschrijving);
             this.Controls.Add(this.txtProjectnaam);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ADM_NieuwProject";
             this.Text = "NieuwProject";
             this.ResumeLayout(false);
@@ -153,12 +122,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtProjectnaam;
         private System.Windows.Forms.TextBox txtProjectomschrijving;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
-        private System.Windows.Forms.DateTimePicker dateTimeEind;
-        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
