@@ -29,13 +29,14 @@ namespace UrenRegestratie
                               select new { projectid = p.Key.projectID, projectnaam = p.Key.naam }).ToList();
             
             combProject.DisplayMember = "projectnaam";
-            int projecid = Convert.ToInt16(combProject.ValueMember = "projectid");
             combProject.ValueMember = "projectid";
             combProject.DataSource = projectens;
 
+            int projecid = Convert.ToInt16(combProject.SelectedValue);
+
             var taak = (from ut in EntityModel.user_taak
                         where ut.Engineer.userID == uid && ut.Project.ID == projecid
-                        select new { taakid = ut.taak.taakID, taaknaam = ut.Project.naam }).ToList();
+                        select new { taakid = ut.taak.taakID, taaknaam = ut.taak.naam }).ToList();
             combTaak.DisplayMember = "taaknaam";
             combTaak.ValueMember = "taakid";
             combTaak.DataSource = taak;
