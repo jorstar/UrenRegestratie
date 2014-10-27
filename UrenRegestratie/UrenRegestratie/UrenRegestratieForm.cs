@@ -23,24 +23,19 @@ namespace UrenRegestratie
         {
             UrenRegCon EntityModel = new UrenRegCon();
 
-            var projectens = (from p in EntityModel.Projects
-                              join ut in EntityModel.user_taak
-                              on p.ID equals ut.projectID
-                              join en in EntityModel.Engineers
-                              on ut.userID equals en.userID
-                              where en.userID == uid
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
+            var projectens = (from ut in EntityModel.user_taak
+                              where ut.Engineer.userID == uid
+                              group ut by new {ut.projectID, ut.Project.naam}  into p
+                              select new { projectid = p.Key.projectID, projectnaam = p.Key.naam }).ToList();
+            
             combProject.DisplayMember = "projectnaam";
+            int projecid = Convert.ToInt16(combProject.ValueMember = "projectid");
             combProject.ValueMember = "projectid";
             combProject.DataSource = projectens;
 
-            var taak = (from p in EntityModel.taaks
-                        join ut in EntityModel.user_taak
-                        on p.taakID equals ut.taakID
-                        join en in EntityModel.Engineers
-                        on ut.userID equals en.userID
-                        where en.userID == uid
-                        select new { taakid = p.taakID, taaknaam = p.naam }).ToList();
+            var taak = (from ut in EntityModel.user_taak
+                        where ut.Engineer.userID == uid && ut.Project.ID == projecid
+                        select new { taakid = ut.taak.taakID, taaknaam = ut.Project.naam }).ToList();
             combTaak.DisplayMember = "taaknaam";
             combTaak.ValueMember = "taakid";
             combTaak.DataSource = taak;

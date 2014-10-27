@@ -82,7 +82,14 @@ namespace UrenRegestratie
             newFrm.WindowState = FormWindowState.Maximized;            
             newFrm.Show();
         }
-
+        private void deTakenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisposeAllChilds();
+            ADM_NieuweTaken newFrm = new ADM_NieuweTaken();
+            newFrm.MdiParent = this;
+            newFrm.WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
         private void afsluitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -99,5 +106,7 @@ namespace UrenRegestratie
                 ActiveMdiChild.Close();
             }
         }
+
+        
     }
 }

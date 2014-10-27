@@ -101,6 +101,7 @@
             this.deTakenToolStripMenuItem.Name = "deTakenToolStripMenuItem";
             this.deTakenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deTakenToolStripMenuItem.Text = "nieuwe taak";
+            this.deTakenToolStripMenuItem.Click += new System.EventHandler(this.deTakenToolStripMenuItem_Click);
             // 
             // urenregistratieToolStripMenuItem
             // 
