@@ -35,13 +35,12 @@
             this.txtTakenOmschrijving = new System.Windows.Forms.TextBox();
             this.combProjecten = new System.Windows.Forms.ComboBox();
             this.btnOpslaan = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
@@ -84,7 +83,7 @@
             // combProjecten
             // 
             this.combProjecten.FormattingEnabled = true;
-            this.combProjecten.Location = new System.Drawing.Point(78, 27);
+            this.combProjecten.Location = new System.Drawing.Point(78, 36);
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(115, 21);
             this.combProjecten.TabIndex = 5;
@@ -99,14 +98,6 @@
             this.btnOpslaan.UseVisualStyleBackColor = true;
             this.btnOpslaan.Click += new System.EventHandler(this.btnOpslaan_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // ADM_NieuweTaken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,9 +110,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ADM_NieuweTaken";
             this.Text = "NieuweTaken";
             this.Load += new System.EventHandler(this.NieuweTaken_Load);
@@ -139,6 +128,5 @@
         private System.Windows.Forms.TextBox txtTakenOmschrijving;
         private System.Windows.Forms.ComboBox combProjecten;
         private System.Windows.Forms.Button btnOpslaan;
-        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

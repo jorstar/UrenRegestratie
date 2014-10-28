@@ -19,110 +19,204 @@ namespace UrenRegestratie
             uid = userid;
         }
 
-        //private void btnVerwijderGebruiker_Click(object sender, EventArgs e)
-        //{
-        //    UrenRegCon fw = new UrenRegCon();
-
-        //    int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
-
-
-        //    var engmod = from eng in fw.Engineers
-        //              where eng.userID == degebruiker
-        //              select eng;
-        //    Engineer objeng = engmod.Single();
-
-        //    objeng.actief = false;
-
-        //    fw.SaveChanges();
-        //}
-
         private void Gebruiker_Load(object sender, EventArgs e)
-        {           
-            //entity model
-            UrenRegCon ef = new UrenRegCon();
-            
-            //kijk welke radiobutton actief is
-            if (rdbActief.Checked)
-            {
-                btnActieveer.Enabled = false;
-                var users = (from p in ef.Engineers
-                             where p.actief == true && p.userID != uid
-                             select new { id = p.userID, voornaam = p.voornaam, achternaam = p.achternaam }).ToList();
-
-                
-                lbGebruikers.DataSource = users;
-                lbGebruikers.ValueMember = "id";
-                lbGebruikers.DisplayMember = "voornaam" + " " + "achternaam";
-                
-                
-              
-            }
-            else if (rdbDeactief.Checked)
-            {
-                btnDeactiveer.Enabled = false;
-                var users = from p in ef.Engineers
-                             where p.actief == false
-                             select p;
-
-                Engineer eng = (Engineer)users;
-                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
-                lbGebruikers.ValueMember = eng.userID.ToString();
-                lbGebruikers.DataSource = users.ToList();
-            }
+        {
+            checkChanged();
         }
 
-       
-
-
-        private void checkChanged(object sender, EventArgs e)
+        private void checkChanged()
         {
             //entity model
             UrenRegCon ef = new UrenRegCon();
 
-            //kijk welke radiobutton geselecteerd is
-            if (rdbActief.Checked)
+            try
             {
-                btnActieveer.Enabled = false;
-                var users = from p in ef.Engineers
-                            where p.actief == true
-                            select p;
-                Engineer eng = (Engineer)users;
-                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
-                lbGebruikers.DataSource = users.ToList();
-            }
-            else if (rdbDeactief.Checked)
-            {
-                btnDeactiveer.Enabled = false;
-                var users = from p in ef.Engineers
-                            where p.actief == false
-                            select p;
+                //kijk welke radiobutton actief is
+                if (rdbActief.Checked)
+                {
+                    btnActieveer.Enabled = false;
+                    var users = (from p in ef.Engineers
+                                 where p.actief == true && p.userID != uid
+                                 select new { naam = p.voornaam + " " + p.achternaam, id = p.userID }).ToList();
 
-                Engineer eng = (Engineer)users;
-                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
-                lbGebruikers.DataSource = users.ToList();
+                    cmbGebruikers.DisplayMember = "naam";
+                    cmbGebruikers.ValueMember = "id";
+                    cmbGebruikers.DataSource = users;
+                    btnActieveer.Enabled = false;
+                    btnDeactiveer.Enabled = true;
+
+                }
+                else if (rdbDeactief.Checked)
+                {
+                    btnActieveer.Enabled = false;
+                    var users = (from p in ef.Engineers
+                                 where p.actief == false
+                                 select new { naam = p.voornaam + " " + p.achternaam, id = p.userID }).ToList();
+
+                    cmbGebruikers.DisplayMember = "naam";
+                    cmbGebruikers.ValueMember = "id";
+                    cmbGebruikers.DataSource = users;
+                    btnActieveer.Enabled = true;
+                    btnDeactiveer.Enabled = false;
+                }
+                SelectedName();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SelectedName()
+        {
+            //entity model
+            UrenRegCon ef = new UrenRegCon();
+            try
+            {
+                //userid
+                int id = (int)cmbGebruikers.SelectedValue;
+
+                var user = from u in ef.Engineers
+                           where u.userID == id
+                           select u;
+                Engineer eng = (Engineer)user.Single();
+                tbVoornaam.Text = eng.voornaam;
+                tbAchternaam.Text = eng.achternaam;
+                tbGebruikersnaam.Text = eng.gebruikersnaam;
+                tbWw.Text = "";
+                if (eng.actief)
+                {
+                    lblActief.Text = "Ja";
+
+                }
+                else
+                {
+                    lblActief.Text = "Nee";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void cmbGebruikers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedName();
+        }
+
+        private void rdbDeactief_CheckedChanged(object sender, EventArgs e)
+        {
+            checkChanged();
+        }
+
+        private void rdbActief_CheckedChanged(object sender, EventArgs e)
+        {
+            checkChanged();
+        }
+
+        private void btnActieveer_Click(object sender, EventArgs e)
+        {
+            UrenRegCon fw = new UrenRegCon();
+
+            int degebruiker = (int)cmbGebruikers.SelectedValue;
+
+
+            var engmod = from eng in fw.Engineers
+                         where eng.userID == degebruiker
+                         select eng;
+            Engineer objeng = engmod.Single();
+
+            objeng.actief = true;
+
+            fw.SaveChanges();
+            checkChanged();
+        }
+
+        private void btnDeactiveer_Click(object sender, EventArgs e)
+        {
+            UrenRegCon fw = new UrenRegCon();
+
+            int degebruiker = (int)cmbGebruikers.SelectedValue;
+
+
+            var engmod = from eng in fw.Engineers
+                         where eng.userID == degebruiker
+                         select eng;
+            Engineer objeng = engmod.Single();
+
+            objeng.actief = false;
+
+            fw.SaveChanges();
+            checkChanged();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tbAchternaam.ReadOnly = false;
+            tbGebruikersnaam.ReadOnly = false;
+            tbVoornaam.ReadOnly = false;
+            tbWw.ReadOnly = false;
+
+        }
+
+        private static string CalculateHashedPassword(string clearpwd, string loginnaam)
+        {
+
+            using (var sha = System.Security.Cryptography.SHA256.Create())
+            {
+
+                var computedHash = sha.ComputeHash(Encoding.Unicode.GetBytes(clearpwd + loginnaam.ToUpper()));
+
+                return Convert.ToBase64String(computedHash);
+
+            }
+
+        }
+
+        private void btnOpslaan_Click(object sender, EventArgs e)
+        {
+            UrenRegCon fw = new UrenRegCon();
+
+            int degebruiker = (int)cmbGebruikers.SelectedValue;
+
+
+            var engmod = from eng in fw.Engineers
+                         where eng.userID == degebruiker
+                         select eng;
+            Engineer objeng = engmod.Single();
+            if (tbAchternaam.Text != "" && tbGebruikersnaam.Text != "" && tbVoornaam.Text != "")
+            {
+                objeng.voornaam = tbVoornaam.Text;
+                objeng.achternaam = tbAchternaam.Text;
+                objeng.gebruikersnaam = tbGebruikersnaam.Text;
+                if (tbWw.Text != "")
+                {
+                    objeng.wachtwoord = CalculateHashedPassword(tbWw.Text, tbGebruikersnaam.Text);
+                }
+                fw.SaveChanges();
             }
             else
             {
-                MessageBox.Show("selecteer of u wel of niet inactive gebruikers wilt zien.");
+                MessageBox.Show("voer alle gegevens in");
             }
+            tbWw.Text = "";
+            tbAchternaam.ReadOnly = true;
+            tbGebruikersnaam.ReadOnly = true;
+            tbVoornaam.ReadOnly = true;
+            tbWw.ReadOnly = true;
         }
-        
 
-        //private void btnActiveer_Click(object sender, EventArgs e)
-        //{
-        //    UrenRegCon fw = new UrenRegCon();
-
-        //    int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
-
-
-        //    var engmod = from eng in fw.Engineers
-        //                 where eng.userID == degebruiker
-        //                 select eng;
-        //    Engineer objeng = engmod.Single();
-
-        //    objeng.actief = true;
-
-        //    fw.SaveChanges();
-        //}
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            tbAchternaam.ReadOnly = true;
+            tbGebruikersnaam.ReadOnly = true;
+            tbVoornaam.ReadOnly = true;
+            tbWw.ReadOnly = true;
+            SelectedName();
+        }
     }
 }

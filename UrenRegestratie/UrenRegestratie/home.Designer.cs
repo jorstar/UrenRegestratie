@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvprotaak = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprotaak)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(12, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
@@ -52,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 68);
+            this.label2.Location = new System.Drawing.Point(12, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 2;
@@ -61,7 +60,7 @@
             // lblAchternaam
             // 
             this.lblAchternaam.AutoSize = true;
-            this.lblAchternaam.Location = new System.Drawing.Point(88, 68);
+            this.lblAchternaam.Location = new System.Drawing.Point(88, 74);
             this.lblAchternaam.Name = "lblAchternaam";
             this.lblAchternaam.Size = new System.Drawing.Size(19, 13);
             this.lblAchternaam.TabIndex = 4;
@@ -70,7 +69,7 @@
             // lblVoornaam
             // 
             this.lblVoornaam.AutoSize = true;
-            this.lblVoornaam.Location = new System.Drawing.Point(88, 42);
+            this.lblVoornaam.Location = new System.Drawing.Point(88, 48);
             this.lblVoornaam.Name = "lblVoornaam";
             this.lblVoornaam.Size = new System.Drawing.Size(19, 13);
             this.lblVoornaam.TabIndex = 3;
@@ -78,7 +77,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(504, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(504, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 148);
             this.pictureBox1.TabIndex = 5;
@@ -87,7 +86,7 @@
             // dgvprotaak
             // 
             this.dgvprotaak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvprotaak.Location = new System.Drawing.Point(15, 114);
+            this.dgvprotaak.Location = new System.Drawing.Point(15, 120);
             this.dgvprotaak.Name = "dgvprotaak";
             this.dgvprotaak.Size = new System.Drawing.Size(240, 150);
             this.dgvprotaak.TabIndex = 6;
@@ -95,19 +94,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 98);
+            this.label3.Location = new System.Drawing.Point(12, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Projecten / Taken";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // home
             // 
@@ -121,9 +112,7 @@
             this.Controls.Add(this.lblVoornaam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "home";
@@ -144,7 +133,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvprotaak;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
 
     }
 }

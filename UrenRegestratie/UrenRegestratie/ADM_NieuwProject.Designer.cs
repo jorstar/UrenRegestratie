@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(12, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 69);
+            this.label2.Location = new System.Drawing.Point(17, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 1;
@@ -58,7 +58,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 193);
+            this.label3.Location = new System.Drawing.Point(12, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -66,14 +66,14 @@
             // 
             // txtProjectnaam
             // 
-            this.txtProjectnaam.Location = new System.Drawing.Point(87, 32);
+            this.txtProjectnaam.Location = new System.Drawing.Point(87, 40);
             this.txtProjectnaam.Name = "txtProjectnaam";
             this.txtProjectnaam.Size = new System.Drawing.Size(267, 20);
             this.txtProjectnaam.TabIndex = 4;
             // 
             // txtProjectomschrijving
             // 
-            this.txtProjectomschrijving.Location = new System.Drawing.Point(12, 85);
+            this.txtProjectomschrijving.Location = new System.Drawing.Point(12, 93);
             this.txtProjectomschrijving.Multiline = true;
             this.txtProjectomschrijving.Name = "txtProjectomschrijving";
             this.txtProjectomschrijving.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -92,7 +92,7 @@
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(87, 193);
+            this.dateTimeBegin.Location = new System.Drawing.Point(87, 201);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeBegin.TabIndex = 25;
