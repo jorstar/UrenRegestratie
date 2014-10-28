@@ -22,9 +22,12 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
             Engineer en = new Engineer();
 
+            int ready = 0;
 
             if(txtVoornaam.Text != "")
             {
@@ -33,6 +36,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een voornaam in.");
+                ready = 1;
             }
             
             if(txtAchternaam.Text != "")
@@ -42,6 +46,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een achternaam in.");
+                ready = 1;
             }
             
             if(txtGebruikersnaam.Text != "")
@@ -51,6 +56,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een gebruikersnaam in.");
+                ready = 1;
             }
 
             if (txtWachtwoord.Text != "")
@@ -60,6 +66,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een wachtwoord in.");
+                ready = 1;
             }
             
             if(radioBNormaleGebruiker.Checked == true)
@@ -73,9 +80,25 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Check aan of de gebruiker een normale gebruiker is of een administrator.");
+                ready = 1;
             }
+
+
+                if(ready == 0)
+                {
             fw.Engineers.Add(en);
-            fw.SaveChanges(); 
+            fw.SaveChanges();
+                }
+                else
+                {
+                    ready = 0;
+                    MessageBox.Show("Gebruiker niet aangemaakt.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private static string CalculateHashedPassword(string clearpwd, string loginnaam)

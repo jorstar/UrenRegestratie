@@ -19,8 +19,13 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            try
+            { 
+
             UrenRegCon fw = new UrenRegCon();
             taak taa = new taak();
+
+            int ready = 0;
 
 
             taa.projectID = Convert.ToInt16(combProjecten.SelectedValue);
@@ -32,6 +37,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een naam in.");
+                ready = 1;
             }
 
             if (txtTakenOmschrijving.Text != "")
@@ -40,22 +46,41 @@ namespace UrenRegestratie
             }
             else
             {
-                MessageBox.Show("Vul een omschrijving in.");
+                taa.omschrijving = "";
             }
 
-
-            fw.taaks.Add(taa);
-            fw.SaveChanges(); 
+            if (ready == 0)
+            {
+                fw.taaks.Add(taa);
+                fw.SaveChanges();
+            }
+                else
+            {
+                ready = 0;
+                MessageBox.Show("Uw taak is niet aangemaakt.");
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void NieuweTaken_Load(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon EntityModel = new UrenRegCon();
             var projectens = (from p in EntityModel.Projects
                               select new { projectid = p.ID, projectnaam = p.naam }).ToList();
             combProjecten.DisplayMember = "projectnaam";
             combProjecten.ValueMember = "projectid";
             combProjecten.DataSource = projectens;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

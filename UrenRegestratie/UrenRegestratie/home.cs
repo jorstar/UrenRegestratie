@@ -21,6 +21,8 @@ namespace UrenRegestratie
 
         private void home_Load(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon ent = new UrenRegCon();
             lblVoornaam.Text = (from u in ent.Engineers
                                 where u.userID == uid
@@ -35,6 +37,11 @@ namespace UrenRegestratie
                        where ut.userID == uid
                        select new { project = ut.Project.naam, taak = ut.taak.naam }).ToList();
             dgvprotaak.DataSource = home;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }

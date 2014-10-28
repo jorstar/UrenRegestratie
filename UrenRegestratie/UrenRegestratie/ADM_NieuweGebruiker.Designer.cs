@@ -35,7 +35,6 @@
             this.radioBNormaleGebruiker = new System.Windows.Forms.RadioButton();
             this.radioBAdministrator = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtVoornaam = new System.Windows.Forms.TextBox();
             this.txtAchternaam = new System.Windows.Forms.TextBox();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
@@ -110,15 +109,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "permissies";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "foto:";
-            // 
             // txtVoornaam
             // 
             this.txtVoornaam.Location = new System.Drawing.Point(103, 59);
@@ -167,7 +157,6 @@
             this.Controls.Add(this.txtGebruikersnaam);
             this.Controls.Add(this.txtAchternaam);
             this.Controls.Add(this.txtVoornaam);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radioBAdministrator);
             this.Controls.Add(this.radioBNormaleGebruiker);
@@ -192,7 +181,6 @@
         private System.Windows.Forms.RadioButton radioBNormaleGebruiker;
         private System.Windows.Forms.RadioButton radioBAdministrator;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtVoornaam;
         private System.Windows.Forms.TextBox txtAchternaam;
         private System.Windows.Forms.TextBox txtGebruikersnaam;

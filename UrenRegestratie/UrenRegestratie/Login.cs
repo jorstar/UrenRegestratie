@@ -79,7 +79,7 @@ namespace UrenRegestratie
 
         private static string CalculateHashedPassword(string clearpwd, string loginnaam)
         {
-
+            
             using (var sha = SHA256.Create())
             {
 
@@ -88,6 +88,7 @@ namespace UrenRegestratie
                 return Convert.ToBase64String(computedHash);
 
             }
+            
 
         }
 

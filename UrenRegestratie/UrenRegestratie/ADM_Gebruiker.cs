@@ -132,6 +132,8 @@ namespace UrenRegestratie
 
         private void btnActieveer_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
 
             int degebruiker = (int)cmbGebruikers.SelectedValue;
@@ -146,10 +148,17 @@ namespace UrenRegestratie
 
             fw.SaveChanges();
             checkChanged();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDeactiveer_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
 
             int degebruiker = (int)cmbGebruikers.SelectedValue;
@@ -164,6 +173,11 @@ namespace UrenRegestratie
 
             fw.SaveChanges();
             checkChanged();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -196,6 +210,8 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
 
             int degebruiker = (int)cmbGebruikers.SelectedValue;
@@ -242,6 +258,11 @@ namespace UrenRegestratie
             btnOpslaan.Enabled = false;
             btnCancel.Enabled = false;
             SelectedName();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -258,14 +279,6 @@ namespace UrenRegestratie
             SelectedName();
         }
 
-        private void tbWw_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

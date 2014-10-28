@@ -19,9 +19,12 @@ namespace UrenRegestratie
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
             Project proj = new Project();
 
+            int ready = 0;
 
             if (txtProjectnaam.Text != "")
             {
@@ -30,6 +33,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een naam in.");
+                ready = 1;
             }
 
             if (txtProjectomschrijving.Text != "")
@@ -38,7 +42,7 @@ namespace UrenRegestratie
             }
             else
             {
-                MessageBox.Show("Vul een omschrijving in in.");
+                proj.omschrijving = "";
             }
 
             if (dateTimeBegin.Text != "")
@@ -48,13 +52,26 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een begindatum in.");
+                ready = 1;
             }
             proj.afgesloten = false;
-            
 
 
-            fw.Projects.Add(proj);
-            fw.SaveChanges(); 
+            if (ready == 0)
+            {
+                fw.Projects.Add(proj);
+                fw.SaveChanges();
+            }
+                else
+            {
+                ready = 0;
+                MessageBox.Show("Uw project is niet aangemaakt.");
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

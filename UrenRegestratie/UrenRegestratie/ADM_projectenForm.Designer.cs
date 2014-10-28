@@ -74,7 +74,6 @@
             this.GridviewProjecten.Name = "GridviewProjecten";
             this.GridviewProjecten.Size = new System.Drawing.Size(656, 221);
             this.GridviewProjecten.TabIndex = 4;
-            this.GridviewProjecten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridviewProjecten_CellContentClick);
             // 
             // button1
             // 

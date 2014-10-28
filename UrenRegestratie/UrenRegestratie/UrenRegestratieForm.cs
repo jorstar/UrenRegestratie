@@ -21,6 +21,8 @@ namespace UrenRegestratie
 
         private void UrenRegestratieForm_Load(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon EntityModel = new UrenRegCon();
 
             var projectens = (from ut in EntityModel.user_taak
@@ -40,10 +42,17 @@ namespace UrenRegestratie
             combTaak.DisplayMember = "taaknaam";
             combTaak.ValueMember = "taakid";
             combTaak.DataSource = taak;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void combProject_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon EntityModel = new UrenRegCon();
 
             int projecid = Convert.ToInt16(combProject.SelectedValue);
@@ -54,14 +63,22 @@ namespace UrenRegestratie
             combTaak.DisplayMember = "taaknaam";
             combTaak.ValueMember = "taakid";
             combTaak.DataSource = taak;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnOpslaan_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
             Regestratie reg = new Regestratie();
 
-            
+            int ready = 0;
+
             reg.userID = uid;
             
 
@@ -72,6 +89,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Selecteer een project.");
+                ready = 1;
             }
 
             if (combTaak.SelectedValue != "")
@@ -81,6 +99,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Selecteer een taak.");
+                ready = 1;
             }
 
             if (dateTimePicker1.Text != "")
@@ -90,6 +109,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul een datum in.");
+                ready = 1;
             }
 
             if (txtVerantwoording.Text != "")
@@ -99,6 +119,7 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul je verantwoording in.");
+                ready = 1;
             }
 
             if (txtAantalUren.Text != "")
@@ -108,13 +129,26 @@ namespace UrenRegestratie
             else
             {
                 MessageBox.Show("Vul uw aantal uren in.");
+                ready = 1;
             }
 
 
 
-
+                if(ready == 0)
+                {
             fw.Regestraties.Add(reg);
-            fw.SaveChanges(); 
+            fw.SaveChanges();
+                }
+                else
+                {
+                    ready = 0;
+                    MessageBox.Show("registratie niet opgeslagen.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         

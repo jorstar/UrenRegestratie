@@ -167,7 +167,6 @@
             this.tbWw.ReadOnly = true;
             this.tbWw.Size = new System.Drawing.Size(149, 20);
             this.tbWw.TabIndex = 17;
-            this.tbWw.TextChanged += new System.EventHandler(this.tbWw_TextChanged);
             // 
             // tbGebruikersnaam
             // 
@@ -193,7 +192,6 @@
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Wachtwoord";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblActief
             // 
@@ -261,7 +259,6 @@
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Permissie";
-            this.label8.Click += new System.EventHandler(this.label7_Click);
             // 
             // cmbperms
             // 

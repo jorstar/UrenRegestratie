@@ -21,6 +21,8 @@ namespace UrenRegestratie
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon EntityModel = new UrenRegCon();
 
             var Adofnor = (from p in EntityModel.Engineers
@@ -40,6 +42,11 @@ namespace UrenRegestratie
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

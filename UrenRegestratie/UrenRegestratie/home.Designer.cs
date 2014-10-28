@@ -32,10 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblAchternaam = new System.Windows.Forms.Label();
             this.lblVoornaam = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvprotaak = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprotaak)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +73,6 @@
             this.lblVoornaam.TabIndex = 3;
             this.lblVoornaam.Text = "vn";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(504, 48);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 148);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // dgvprotaak
             // 
             this.dgvprotaak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -107,7 +97,6 @@
             this.ClientSize = new System.Drawing.Size(655, 285);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvprotaak);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblAchternaam);
             this.Controls.Add(this.lblVoornaam);
             this.Controls.Add(this.label2);
@@ -117,7 +106,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "home";
             this.Load += new System.EventHandler(this.home_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprotaak)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,7 +118,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAchternaam;
         private System.Windows.Forms.Label lblVoornaam;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvprotaak;
         private System.Windows.Forms.Label label3;
 

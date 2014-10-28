@@ -22,6 +22,8 @@ namespace UrenRegestratie
 
         private void projecten_Load(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon EntityModel = new UrenRegCon();
             var projectens = (from p in EntityModel.Projects
                               where p.afgesloten == false
@@ -29,12 +31,19 @@ namespace UrenRegestratie
             combProjecten.DisplayMember = "projectnaam";
             combProjecten.ValueMember = "projectid";
             combProjecten.DataSource = projectens;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         
 
         private void btnProjAfsl_Click(object sender, EventArgs e)
         {
+            try
+            { 
             UrenRegCon fw = new UrenRegCon();
 
             int projid = Convert.ToInt16(combProjecten.SelectedValue);
@@ -48,6 +57,11 @@ namespace UrenRegestratie
             objafsl.afgesloten = true;
 
             fw.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +78,8 @@ namespace UrenRegestratie
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            { 
             if(radioBNiet.Checked == true)
             {
             UrenRegCon EntityModel = new UrenRegCon();
@@ -87,10 +103,17 @@ namespace UrenRegestratie
             {
                 MessageBox.Show("selecteer of u wel of niet afgesloten projecten wilt zien.");
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            { 
             if(radioBNiet.Checked == true)
             {
             UrenRegCon EntityModel = new UrenRegCon();
@@ -114,11 +137,13 @@ namespace UrenRegestratie
             {
                 MessageBox.Show("selecteer of u wel of niet afgesloten proecten wilt zien.");
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void GridviewProjecten_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
     }
 }
