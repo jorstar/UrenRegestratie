@@ -138,6 +138,7 @@ namespace UrenRegestratie
                 {
             fw.Regestraties.Add(reg);
             fw.SaveChanges();
+            MessageBox.Show("Uren zijn geregistreert.");
                 }
                 else
                 {

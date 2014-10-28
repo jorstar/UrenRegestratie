@@ -61,6 +61,7 @@ namespace UrenRegestratie
             {
                 fw.Projects.Add(proj);
                 fw.SaveChanges();
+                MessageBox.Show("Project is aangemaakt.");
             }
                 else
             {

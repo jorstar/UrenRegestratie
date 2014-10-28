@@ -53,6 +53,7 @@ namespace UrenRegestratie
             {
                 fw.taaks.Add(taa);
                 fw.SaveChanges();
+                MessageBox.Show("taak is aangemaakt.");
             }
                 else
             {

@@ -88,6 +88,7 @@ namespace UrenRegestratie
                 {
             fw.Engineers.Add(en);
             fw.SaveChanges();
+            MessageBox.Show("Gebruiker is aangemaakt.");
                 }
                 else
                 {
