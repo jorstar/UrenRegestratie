@@ -73,7 +73,7 @@ namespace UrenRegestratie
         private void deGebruikersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisposeAllChilds();
-            ADM_Gebruiker newFrm = new ADM_Gebruiker();
+            ADM_Gebruiker newFrm = new ADM_Gebruiker(uid);
             newFrm.MdiParent = this;
             newFrm.WindowState = FormWindowState.Maximized;
             newFrm.Show();

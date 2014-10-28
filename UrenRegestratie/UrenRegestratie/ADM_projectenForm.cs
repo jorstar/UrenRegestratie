@@ -115,5 +115,10 @@ namespace UrenRegestratie
                 MessageBox.Show("selecteer of u wel of niet afgesloten proecten wilt zien.");
             }
         }
+
+        private void GridviewProjecten_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

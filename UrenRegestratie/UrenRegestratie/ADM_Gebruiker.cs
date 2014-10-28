@@ -12,140 +12,117 @@ namespace UrenRegestratie
 {
     public partial class ADM_Gebruiker : Form
     {
-        public ADM_Gebruiker()
+        private int uid;
+        public ADM_Gebruiker(int userid)
         {
             InitializeComponent();
+            uid = userid;
         }
 
-        private void btnVerwijderGebruiker_Click(object sender, EventArgs e)
-        {
-            UrenRegCon fw = new UrenRegCon();
+        //private void btnVerwijderGebruiker_Click(object sender, EventArgs e)
+        //{
+        //    UrenRegCon fw = new UrenRegCon();
 
-            int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
+        //    int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
 
 
-            var engmod = from eng in fw.Engineers
-                      where eng.userID == degebruiker
-                      select eng;
-            Engineer objeng = engmod.Single();
+        //    var engmod = from eng in fw.Engineers
+        //              where eng.userID == degebruiker
+        //              select eng;
+        //    Engineer objeng = engmod.Single();
 
-            objeng.actief = false;
+        //    objeng.actief = false;
 
-            fw.SaveChanges();
-        }
+        //    fw.SaveChanges();
+        //}
 
         private void Gebruiker_Load(object sender, EventArgs e)
-        {
-            btnActiveer.Visible = false;
+        {           
+            //entity model
+            UrenRegCon ef = new UrenRegCon();
+            
+            //kijk welke radiobutton actief is
+            if (rdbActief.Checked)
+            {
+                btnActieveer.Enabled = false;
+                var users = (from p in ef.Engineers
+                             where p.actief == true && p.userID != uid
+                             select new { id = p.userID, voornaam = p.voornaam, achternaam = p.achternaam }).ToList();
 
-            UrenRegCon EntityModel = new UrenRegCon();
+                
+                lbGebruikers.DataSource = users;
+                lbGebruikers.ValueMember = "id";
+                lbGebruikers.DisplayMember = "voornaam" + " " + "achternaam";
+                
+                
+              
+            }
+            else if (rdbDeactief.Checked)
+            {
+                btnDeactiveer.Enabled = false;
+                var users = from p in ef.Engineers
+                             where p.actief == false
+                             select p;
 
-            if(radioBWel.Checked == true)
-            {
-            var users = (from p in EntityModel.Engineers
-                         select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-            combGebruikers.DisplayMember = "gebruikersnaam";
-            combGebruikers.ValueMember = "userid";
-            combGebruikers.DataSource = users;
-            }
-            else if(radioBNiet.Checked == true)
-            {
-                var users = (from p in EntityModel.Engineers
-                             where p.actief == true
-                         select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-            combGebruikers.DisplayMember = "gebruikersnaam";
-            combGebruikers.ValueMember = "userid";
-            combGebruikers.DataSource = users;
-            }
-            else
-            {
-                MessageBox.Show("selecteer of u wel of niet inactive gebruikers wilt zien.");
+                Engineer eng = (Engineer)users;
+                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
+                lbGebruikers.ValueMember = eng.userID.ToString();
+                lbGebruikers.DataSource = users.ToList();
             }
         }
 
        
 
-        private void radioBWel_CheckedChanged(object sender, EventArgs e)
-        {
-            UrenRegCon EntityModel = new UrenRegCon();
 
-            if (radioBWel.Checked == true)
+        private void checkChanged(object sender, EventArgs e)
+        {
+            //entity model
+            UrenRegCon ef = new UrenRegCon();
+
+            //kijk welke radiobutton geselecteerd is
+            if (rdbActief.Checked)
             {
-                var users = (from p in EntityModel.Engineers
-                             select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-                combGebruikers.DisplayMember = "gebruikersnaam";
-                combGebruikers.ValueMember = "userid";
-                combGebruikers.DataSource = users;
+                btnActieveer.Enabled = false;
+                var users = from p in ef.Engineers
+                            where p.actief == true
+                            select p;
+                Engineer eng = (Engineer)users;
+                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
+                lbGebruikers.DataSource = users.ToList();
             }
-            else if (radioBNiet.Checked == true)
+            else if (rdbDeactief.Checked)
             {
-                var users = (from p in EntityModel.Engineers
-                             where p.actief == true
-                             select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-                combGebruikers.DisplayMember = "gebruikersnaam";
-                combGebruikers.ValueMember = "userid";
-                combGebruikers.DataSource = users;
+                btnDeactiveer.Enabled = false;
+                var users = from p in ef.Engineers
+                            where p.actief == false
+                            select p;
+
+                Engineer eng = (Engineer)users;
+                lbGebruikers.DisplayMember = eng.voornaam + eng.achternaam;
+                lbGebruikers.DataSource = users.ToList();
             }
             else
             {
                 MessageBox.Show("selecteer of u wel of niet inactive gebruikers wilt zien.");
             }
         }
+        
 
-        private void radioBNiet_CheckedChanged(object sender, EventArgs e)
-        {
-            UrenRegCon EntityModel = new UrenRegCon();
+        //private void btnActiveer_Click(object sender, EventArgs e)
+        //{
+        //    UrenRegCon fw = new UrenRegCon();
 
-            if (radioBWel.Checked == true)
-            {
-                var users = (from p in EntityModel.Engineers
-                             select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-                combGebruikers.DisplayMember = "gebruikersnaam";
-                combGebruikers.ValueMember = "userid";
-                combGebruikers.DataSource = users;
-            }
-            else if (radioBNiet.Checked == true)
-            {
-                var users = (from p in EntityModel.Engineers
-                             where p.actief == true
-                             select new { projectid = p.userID, projectnaam = p.gebruikersnaam }).ToList();
-                combGebruikers.DisplayMember = "gebruikersnaam";
-                combGebruikers.ValueMember = "userid";
-                combGebruikers.DataSource = users;
-            }
-            else
-            {
-                MessageBox.Show("selecteer of u wel of niet inactive gebruikers wilt zien.");
-            }
-        }
-
-        private void btnActiveer_Click(object sender, EventArgs e)
-        {
-            UrenRegCon fw = new UrenRegCon();
-
-            int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
+        //    int degebruiker = Convert.ToInt16(combGebruikers.SelectedValue);
 
 
-            var engmod = from eng in fw.Engineers
-                         where eng.userID == degebruiker
-                         select eng;
-            Engineer objeng = engmod.Single();
+        //    var engmod = from eng in fw.Engineers
+        //                 where eng.userID == degebruiker
+        //                 select eng;
+        //    Engineer objeng = engmod.Single();
 
-            objeng.actief = true;
+        //    objeng.actief = true;
 
-            fw.SaveChanges();
-        }
-
-        private void radioBNiet_Click(object sender, EventArgs e)
-        {
-            btnActiveer.Visible = false;
-            btnVerwijderGebruiker.Visible = true;
-        }
-
-        private void radioBWel_Click(object sender, EventArgs e)
-        {
-            btnActiveer.Visible = true;
-            btnVerwijderGebruiker.Visible = false;
-        }
+        //    fw.SaveChanges();
+        //}
     }
 }

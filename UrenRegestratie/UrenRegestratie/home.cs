@@ -12,7 +12,7 @@ namespace UrenRegestratie
 {
     public partial class home : Form
     {
-        public int uid;
+        private int uid;
         public home(int userid)
         {
             InitializeComponent();

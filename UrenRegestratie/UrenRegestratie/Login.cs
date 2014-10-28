@@ -47,6 +47,7 @@ namespace UrenRegestratie
         {
             try
             {
+
                 UrenRegCon EntityModel = new UrenRegCon();
                 string user = tbUsername.Text;
                 string pass = CalculateHashedPassword(tbPassword.Text, user);
@@ -54,7 +55,7 @@ namespace UrenRegestratie
                 tbUsername.Text = "";
 
                 var Gebruiker = (from E in EntityModel.Engineers
-                                 where E.gebruikersnaam == user && E.wachtwoord == pass
+                                 where E.gebruikersnaam == user && E.wachtwoord == pass && E.actief != false
                                  select E.userID).First();
                
                 int uid = Convert.ToInt16(Gebruiker);
