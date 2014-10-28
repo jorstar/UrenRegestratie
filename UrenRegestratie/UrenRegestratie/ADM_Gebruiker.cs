@@ -22,6 +22,8 @@ namespace UrenRegestratie
         private void Gebruiker_Load(object sender, EventArgs e)
         {
             checkChanged();
+            cmbperms.Enabled = false;
+            cmbperms.Visible = false;
         }
 
         private void checkChanged()
@@ -93,6 +95,16 @@ namespace UrenRegestratie
                 {
                     lblActief.Text = "Nee";
                 }
+                if(eng.permissie)
+                {
+                    lblPerms.Text = "Administrator";
+                    cmbperms.SelectedItem = "Administrator";
+                }
+                else
+                {
+                    lblPerms.Text = "Gebruiker";
+                    cmbperms.SelectedItem = "Gebruiker";
+                }
                 
             }
             catch (Exception ex)
@@ -160,6 +172,11 @@ namespace UrenRegestratie
             tbGebruikersnaam.ReadOnly = false;
             tbVoornaam.ReadOnly = false;
             tbWw.ReadOnly = false;
+            lblPerms.Visible = false;
+            cmbperms.Visible = true;
+            cmbperms.Enabled = true;
+            btnOpslaan.Enabled = true;
+            btnCancel.Enabled = true;
 
         }
 
@@ -187,12 +204,23 @@ namespace UrenRegestratie
             var engmod = from eng in fw.Engineers
                          where eng.userID == degebruiker
                          select eng;
+
             Engineer objeng = engmod.Single();
+
+
             if (tbAchternaam.Text != "" && tbGebruikersnaam.Text != "" && tbVoornaam.Text != "")
             {
                 objeng.voornaam = tbVoornaam.Text;
                 objeng.achternaam = tbAchternaam.Text;
                 objeng.gebruikersnaam = tbGebruikersnaam.Text;
+                if (cmbperms.SelectedItem.ToString() == "Administrator")
+                {
+                    objeng.permissie = true;
+                }
+                else if(cmbperms.SelectedItem.ToString() == "Gebruiker")
+                {
+                    objeng.permissie = false;
+                }
                 if (tbWw.Text != "")
                 {
                     objeng.wachtwoord = CalculateHashedPassword(tbWw.Text, tbGebruikersnaam.Text);
@@ -208,6 +236,12 @@ namespace UrenRegestratie
             tbGebruikersnaam.ReadOnly = true;
             tbVoornaam.ReadOnly = true;
             tbWw.ReadOnly = true;
+            cmbperms.Enabled = false;
+            cmbperms.Visible = false;
+            lblPerms.Visible = true;
+            btnOpslaan.Enabled = false;
+            btnCancel.Enabled = false;
+            SelectedName();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -216,7 +250,22 @@ namespace UrenRegestratie
             tbGebruikersnaam.ReadOnly = true;
             tbVoornaam.ReadOnly = true;
             tbWw.ReadOnly = true;
+            cmbperms.Enabled = false;
+            cmbperms.Visible = false;
+            lblPerms.Visible = true;
+            btnOpslaan.Enabled = false;
+            btnCancel.Enabled = false;
             SelectedName();
+        }
+
+        private void tbWw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

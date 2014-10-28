@@ -49,6 +49,9 @@
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmbGebruikers = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbperms = new System.Windows.Forms.ComboBox();
+            this.lblPerms = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rdbDeactief
@@ -164,6 +167,7 @@
             this.tbWw.ReadOnly = true;
             this.tbWw.Size = new System.Drawing.Size(149, 20);
             this.tbWw.TabIndex = 17;
+            this.tbWw.TextChanged += new System.EventHandler(this.tbWw_TextChanged);
             // 
             // tbGebruikersnaam
             // 
@@ -189,11 +193,12 @@
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Wachtwoord";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblActief
             // 
             this.lblActief.AutoSize = true;
-            this.lblActief.Location = new System.Drawing.Point(491, 178);
+            this.lblActief.Location = new System.Drawing.Point(491, 205);
             this.lblActief.Name = "lblActief";
             this.lblActief.Size = new System.Drawing.Size(0, 13);
             this.lblActief.TabIndex = 21;
@@ -201,7 +206,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(404, 178);
+            this.label9.Location = new System.Drawing.Point(404, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
             this.label9.TabIndex = 22;
@@ -209,7 +214,7 @@
             // 
             // btnAanpassen
             // 
-            this.btnAanpassen.Location = new System.Drawing.Point(406, 204);
+            this.btnAanpassen.Location = new System.Drawing.Point(406, 231);
             this.btnAanpassen.Name = "btnAanpassen";
             this.btnAanpassen.Size = new System.Drawing.Size(75, 23);
             this.btnAanpassen.TabIndex = 23;
@@ -219,7 +224,8 @@
             // 
             // btnOpslaan
             // 
-            this.btnOpslaan.Location = new System.Drawing.Point(487, 204);
+            this.btnOpslaan.Enabled = false;
+            this.btnOpslaan.Location = new System.Drawing.Point(487, 231);
             this.btnOpslaan.Name = "btnOpslaan";
             this.btnOpslaan.Size = new System.Drawing.Size(75, 23);
             this.btnOpslaan.TabIndex = 24;
@@ -229,7 +235,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(568, 204);
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(568, 231);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 25;
@@ -246,17 +253,49 @@
             this.cmbGebruikers.TabIndex = 26;
             this.cmbGebruikers.SelectedIndexChanged += new System.EventHandler(this.cmbGebruikers_SelectedIndexChanged);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(404, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Permissie";
+            this.label8.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // cmbperms
+            // 
+            this.cmbperms.FormattingEnabled = true;
+            this.cmbperms.Items.AddRange(new object[] {
+            "Administrator",
+            "Gebruiker"});
+            this.cmbperms.Location = new System.Drawing.Point(494, 173);
+            this.cmbperms.Name = "cmbperms";
+            this.cmbperms.Size = new System.Drawing.Size(149, 21);
+            this.cmbperms.TabIndex = 27;
+            // 
+            // lblPerms
+            // 
+            this.lblPerms.AutoSize = true;
+            this.lblPerms.Location = new System.Drawing.Point(491, 176);
+            this.lblPerms.Name = "lblPerms";
+            this.lblPerms.Size = new System.Drawing.Size(0, 13);
+            this.lblPerms.TabIndex = 28;
+            // 
             // ADM_Gebruiker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 285);
+            this.Controls.Add(this.lblPerms);
+            this.Controls.Add(this.cmbperms);
             this.Controls.Add(this.cmbGebruikers);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOpslaan);
             this.Controls.Add(this.btnAanpassen);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblActief);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbAchternaam);
             this.Controls.Add(this.tbGebruikersnaam);
@@ -304,5 +343,8 @@
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbGebruikers;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbperms;
+        private System.Windows.Forms.Label lblPerms;
     }
 }
