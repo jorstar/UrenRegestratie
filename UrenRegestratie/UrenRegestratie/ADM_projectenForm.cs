@@ -55,6 +55,7 @@ namespace UrenRegestratie
             Project objafsl = projafsl.Single();
 
             objafsl.afgesloten = true;
+            objafsl.eindDatum = DateTime.Today;
 
             fw.SaveChanges();
             }
@@ -139,6 +140,30 @@ namespace UrenRegestratie
             }
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void combProjecten_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int hetproject = (int)combProjecten.SelectedValue;
+
+                UrenRegCon EntityModel = new UrenRegCon();
+                var projectens = (from p in EntityModel.Projects
+                                  where p.ID == hetproject
+                                  select new { projectid = p.ID, projectnaam = p.naam, begindatum = p.beginDatum, taken = p.taaks }).ToList();
+
+                GridviewProjecten.DataSource = projectens;
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

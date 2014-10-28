@@ -57,6 +57,7 @@
             this.combProjecten.Name = "combProjecten";
             this.combProjecten.Size = new System.Drawing.Size(121, 21);
             this.combProjecten.TabIndex = 1;
+            this.combProjecten.SelectedIndexChanged += new System.EventHandler(this.combProjecten_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -92,6 +93,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(655, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // radioBWel
             // 

@@ -21,6 +21,7 @@ namespace UrenRegestratie
 
         private void Gebruiker_Load(object sender, EventArgs e)
         {
+            cmbGebruikers.AllowDrop = false;
             checkChanged();
             cmbperms.Enabled = false;
             cmbperms.Visible = false;
