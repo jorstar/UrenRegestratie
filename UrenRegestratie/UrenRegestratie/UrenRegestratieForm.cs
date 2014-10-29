@@ -84,7 +84,7 @@ namespace UrenRegestratie
 
             if (combProject.SelectedValue != "")
             {
-                reg.projectID = Convert.ToInt16(combProject.SelectedValue);
+                reg.projectID = (int)combProject.SelectedValue;
             }
             else
             {
@@ -94,7 +94,7 @@ namespace UrenRegestratie
 
             if (combTaak.SelectedValue != "")
             {
-                reg.taakID = Convert.ToInt16(combTaak.SelectedValue);
+                reg.taakID = (int)combTaak.SelectedValue;
             }
             else
             {
@@ -104,7 +104,8 @@ namespace UrenRegestratie
 
             if (dateTimePicker1.Text != "")
             {
-                reg.datum = dateTimePicker1.Value;
+                
+                reg.datum =  dateTimePicker1.Value;
             }
             else
             {
