@@ -92,6 +92,7 @@
             // 
             // dateTimeBegin
             // 
+            this.dateTimeBegin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeBegin.Location = new System.Drawing.Point(87, 201);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
