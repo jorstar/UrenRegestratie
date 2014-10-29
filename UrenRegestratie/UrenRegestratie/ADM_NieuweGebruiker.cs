@@ -86,6 +86,7 @@ namespace UrenRegestratie
 
                 if(ready == 0)
                 {
+                    en.actief = true;
             fw.Engineers.Add(en);
             fw.SaveChanges();
             MessageBox.Show("Gebruiker is aangemaakt.");
@@ -113,6 +114,11 @@ namespace UrenRegestratie
                 return Convert.ToBase64String(computedHash);
 
             }
+
+        }
+
+        private void ADM_NieuweGebruiker_Load(object sender, EventArgs e)
+        {
 
         }
 

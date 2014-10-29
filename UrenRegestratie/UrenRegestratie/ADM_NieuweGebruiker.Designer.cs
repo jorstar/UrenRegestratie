@@ -167,6 +167,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ADM_NieuweGebruiker";
             this.Text = "NieuweGebruiker";
+            this.Load += new System.EventHandler(this.ADM_NieuweGebruiker_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

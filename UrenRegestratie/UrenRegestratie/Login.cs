@@ -51,14 +51,15 @@ namespace UrenRegestratie
                 UrenRegCon EntityModel = new UrenRegCon();
                 string user = tbUsername.Text;
                 string pass = CalculateHashedPassword(tbPassword.Text, user);
-                tbPassword.Text = "";
-                tbUsername.Text = "";
+                
 
                 var Gebruiker = (from E in EntityModel.Engineers
                                  where E.gebruikersnaam == user && E.wachtwoord == pass && E.actief != false
                                  select E.userID).First();
                
                 int uid = Convert.ToInt16(Gebruiker);
+                tbPassword.Text = "";
+                tbUsername.Text = "";
 
                     Form2 frm = new Form2(uid);
                     frm.Show();
@@ -68,11 +69,12 @@ namespace UrenRegestratie
             }
             catch(EntityException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message); 
             }
             catch(Exception)
             {
                 MessageBox.Show("Incorrect username / password");
+                tbPassword.Text = "";
             }
 
         }
