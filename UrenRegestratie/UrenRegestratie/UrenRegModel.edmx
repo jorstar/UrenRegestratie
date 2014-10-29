@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="URENREGISTRATIEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="URENREGISTRATIEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Engineer">
           <Key>
             <PropertyRef Name="userID" />
@@ -24,7 +24,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="naam" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="omschrijving" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="omschrijving" Type="nvarchar(max)" />
           <Property Name="beginDatum" Type="date" Nullable="false" />
           <Property Name="eindDatum" Type="date" />
           <Property Name="afgesloten" Type="bit" Nullable="false" />
@@ -60,7 +60,7 @@
           <Property Name="taakID" Type="int" Nullable="false" />
           <Property Name="projectID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Regestratie_user_taak">
+        <Association Name="FK_Regestratie_user_taak1">
           <End Role="user_taak" Type="Self.user_taak" Multiplicity="1" />
           <End Role="Regestratie" Type="Self.Regestratie" Multiplicity="*" />
           <ReferentialConstraint>
@@ -130,7 +130,7 @@
           <EntitySet Name="Regestratie" EntityType="Self.Regestratie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="taak" EntityType="Self.taak" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_taak" EntityType="Self.user_taak" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Regestratie_user_taak" Association="Self.FK_Regestratie_user_taak">
+          <AssociationSet Name="FK_Regestratie_user_taak1" Association="Self.FK_Regestratie_user_taak1">
             <End Role="user_taak" EntitySet="user_taak" />
             <End Role="Regestratie" EntitySet="Regestratie" />
           </AssociationSet>
@@ -151,8 +151,7 @@
             <End Role="user_taak" EntitySet="user_taak" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="URENREGISTRATIEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -176,7 +175,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naam" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="omschrijving" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="omschrijving" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="beginDatum" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="eindDatum" Type="DateTime" Precision="0" />
           <Property Name="afgesloten" Type="Boolean" Nullable="false" />

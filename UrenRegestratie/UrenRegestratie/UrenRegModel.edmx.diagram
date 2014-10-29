@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2264d487340c4c758f2fdc99d7b3c429" Name="Diagram1">
+      <Diagram DiagramId="2264d487340c4c758f2fdc99d7b3c429" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="URENREGISTRATIEModel.Engineer" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="URENREGISTRATIEModel.Project" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="URENREGISTRATIEModel.Regestratie" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
