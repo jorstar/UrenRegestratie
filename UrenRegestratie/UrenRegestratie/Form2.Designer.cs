@@ -33,13 +33,14 @@
             this.projectenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deProjectenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuwProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.takenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deTakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.urenregistratieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gebruikersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deGebruikersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuweGebruikerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afsluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.taakGevenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,20 +49,19 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.projectenToolStripMenuItem,
-            this.takenToolStripMenuItem,
             this.urenregistratieToolStripMenuItem,
             this.gebruikersToolStripMenuItem,
             this.afsluitenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(656, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(656, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.homeToolStripMenuItem.Text = "home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -69,44 +69,33 @@
             // 
             this.projectenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deProjectenToolStripMenuItem,
-            this.nieuwProjectToolStripMenuItem});
+            this.nieuwProjectToolStripMenuItem,
+            this.takenToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.taakGevenToolStripMenuItem});
             this.projectenToolStripMenuItem.Name = "projectenToolStripMenuItem";
-            this.projectenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.projectenToolStripMenuItem.Text = "Projecten";
+            this.projectenToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.projectenToolStripMenuItem.Text = "Project";
+            this.projectenToolStripMenuItem.Click += new System.EventHandler(this.projectenToolStripMenuItem_Click);
             // 
             // deProjectenToolStripMenuItem
             // 
             this.deProjectenToolStripMenuItem.Name = "deProjectenToolStripMenuItem";
-            this.deProjectenToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.deProjectenToolStripMenuItem.Text = "de projecten";
+            this.deProjectenToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.deProjectenToolStripMenuItem.Text = "Projecten";
             this.deProjectenToolStripMenuItem.Click += new System.EventHandler(this.deProjectenToolStripMenuItem_Click);
             // 
             // nieuwProjectToolStripMenuItem
             // 
             this.nieuwProjectToolStripMenuItem.Name = "nieuwProjectToolStripMenuItem";
-            this.nieuwProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.nieuwProjectToolStripMenuItem.Text = "nieuw project";
+            this.nieuwProjectToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.nieuwProjectToolStripMenuItem.Text = "Project aanmaken";
             this.nieuwProjectToolStripMenuItem.Click += new System.EventHandler(this.nieuwProjectToolStripMenuItem_Click);
-            // 
-            // takenToolStripMenuItem
-            // 
-            this.takenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deTakenToolStripMenuItem});
-            this.takenToolStripMenuItem.Name = "takenToolStripMenuItem";
-            this.takenToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.takenToolStripMenuItem.Text = "taken";
-            // 
-            // deTakenToolStripMenuItem
-            // 
-            this.deTakenToolStripMenuItem.Name = "deTakenToolStripMenuItem";
-            this.deTakenToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.deTakenToolStripMenuItem.Text = "nieuwe taak";
-            this.deTakenToolStripMenuItem.Click += new System.EventHandler(this.deTakenToolStripMenuItem_Click);
             // 
             // urenregistratieToolStripMenuItem
             // 
             this.urenregistratieToolStripMenuItem.Name = "urenregistratieToolStripMenuItem";
-            this.urenregistratieToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.urenregistratieToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.urenregistratieToolStripMenuItem.Text = "Urenregistratie";
             this.urenregistratieToolStripMenuItem.Click += new System.EventHandler(this.urenregistratieToolStripMenuItem_Click);
             // 
@@ -116,29 +105,50 @@
             this.deGebruikersToolStripMenuItem,
             this.nieuweGebruikerToolStripMenuItem});
             this.gebruikersToolStripMenuItem.Name = "gebruikersToolStripMenuItem";
-            this.gebruikersToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.gebruikersToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.gebruikersToolStripMenuItem.Text = "Gebruikers";
             // 
             // deGebruikersToolStripMenuItem
             // 
             this.deGebruikersToolStripMenuItem.Name = "deGebruikersToolStripMenuItem";
-            this.deGebruikersToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.deGebruikersToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
             this.deGebruikersToolStripMenuItem.Text = "Gebruikers";
             this.deGebruikersToolStripMenuItem.Click += new System.EventHandler(this.deGebruikersToolStripMenuItem_Click);
             // 
             // nieuweGebruikerToolStripMenuItem
             // 
             this.nieuweGebruikerToolStripMenuItem.Name = "nieuweGebruikerToolStripMenuItem";
-            this.nieuweGebruikerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.nieuweGebruikerToolStripMenuItem.Text = "nieuwe gebruiker";
+            this.nieuweGebruikerToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
+            this.nieuweGebruikerToolStripMenuItem.Text = "Gebruiker aanmaken";
             this.nieuweGebruikerToolStripMenuItem.Click += new System.EventHandler(this.nieuweGebruikerToolStripMenuItem_Click);
             // 
             // afsluitenToolStripMenuItem
             // 
             this.afsluitenToolStripMenuItem.Name = "afsluitenToolStripMenuItem";
-            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.afsluitenToolStripMenuItem.Text = "Afsluiten";
             this.afsluitenToolStripMenuItem.Click += new System.EventHandler(this.afsluitenToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
+            this.toolStripMenuItem1.Text = "Taak aanmaken";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.deTakenToolStripMenuItem_Click);
+            // 
+            // taakGevenToolStripMenuItem
+            // 
+            this.taakGevenToolStripMenuItem.Name = "taakGevenToolStripMenuItem";
+            this.taakGevenToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.taakGevenToolStripMenuItem.Text = "Taak geven";
+            this.taakGevenToolStripMenuItem.Click += new System.EventHandler(this.taakGevenToolStripMenuItem_Click);
+            // 
+            // takenToolStripMenuItem
+            // 
+            this.takenToolStripMenuItem.Name = "takenToolStripMenuItem";
+            this.takenToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.takenToolStripMenuItem.Text = "Taken";
+            this.takenToolStripMenuItem.Click += new System.EventHandler(this.takenToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -172,9 +182,10 @@
         private System.Windows.Forms.ToolStripMenuItem gebruikersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deGebruikersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nieuweGebruikerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem takenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deTakenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem afsluitenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem taakGevenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takenToolStripMenuItem;
 
     }
 }

@@ -36,3 +36,5 @@ D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_NieuweTaken.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_NieuwProject.resources
 D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADM_projectenForm.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADMUser_Taak.resources
+D:\Users\jordy\Documents\GitHub\UrenRegestratie\UrenRegestratie\UrenRegestratie\obj\Debug\UrenRegestratie.ADMTaken.resources

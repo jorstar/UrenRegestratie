@@ -18,24 +18,12 @@ namespace UrenRegestratie
             InitializeComponent();
         }
 
-        
+        UrenRegCon EntityModel = new UrenRegCon();
 
         private void projecten_Load(object sender, EventArgs e)
         {
-            try
-            { 
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              where p.afgesloten == false
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            checkchanged();
+            vulcmb();
         }
 
         
@@ -58,6 +46,8 @@ namespace UrenRegestratie
             objafsl.eindDatum = DateTime.Today;
 
             fw.SaveChanges();
+            checkchanged();
+            vulcmb();
             }
             catch (Exception ex)
             {
@@ -79,96 +69,62 @@ namespace UrenRegestratie
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            try
-            { 
-            if(radioBNiet.Checked == true)
-            {
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              where p.afgesloten == false
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
-            }
-            else if(radioBWel.Checked == true)
-            {
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
-            }
-            else
-            {
-                MessageBox.Show("selecteer of u wel of niet afgesloten projecten wilt zien.");
-            }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            checkchanged();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            checkchanged();
+        }
+
+        private void checkchanged()
+        {
             try
-            { 
-            if(radioBNiet.Checked == true)
             {
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              where p.afgesloten == false
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
-            }
-            else if (radioBWel.Checked == true)
-            {
-            UrenRegCon EntityModel = new UrenRegCon();
-            var projectens = (from p in EntityModel.Projects
-                              select new { projectid = p.ID, projectnaam = p.naam }).ToList();
-            combProjecten.DisplayMember = "projectnaam";
-            combProjecten.ValueMember = "projectid";
-            combProjecten.DataSource = projectens;
-            }
-            else
-            {
-                MessageBox.Show("selecteer of u wel of niet afgesloten proecten wilt zien.");
-            }
+                if (radioBNiet.Checked == true)
+                {                   
+                    var projectens = (from p in EntityModel.Projects
+                                      where p.afgesloten == false
+                                      select new { ID = p.ID, Naam = p.naam, Omschrijving = p.omschrijving, Afgesloten = p.afgesloten }).ToList();
+                    GridviewProjecten.DataSource = projectens;
+                }
+                else if (radioBWel.Checked == true)
+                {                    
+                    var projectens = (from p in EntityModel.Projects
+                                      select new { ID = p.ID, Naam = p.naam, Omschrijving = p.omschrijving, Afgesloten = p.afgesloten }).ToList();
+                    GridviewProjecten.DataSource = projectens;
+                }
+                else
+                {
+                    MessageBox.Show("selecteer of u wel of niet afgesloten proecten wilt zien.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void combProjecten_SelectedIndexChanged(object sender, EventArgs e)
+        private void vulcmb()
         {
             try
             {
-                int hetproject = (int)combProjecten.SelectedValue;
-
-                UrenRegCon EntityModel = new UrenRegCon();
-                var projectens = (from p in EntityModel.Projects
-                                  where p.ID == hetproject
-                                  select new { projectid = p.ID, projectnaam = p.naam, begindatum = p.beginDatum, taken = p.taaks }).ToList();
-
-                GridviewProjecten.DataSource = projectens;
+                var projects = (from p in EntityModel.Projects
+                                where p.afgesloten == false
+                                select new { ID = p.ID, Naam = p.naam }).ToList();
+                combProjecten.DisplayMember = "Naam";
+                combProjecten.ValueMember = "ID";
+                combProjecten.DataSource = projects;
             }
-            catch(Exception ex)
+            catch (EntityException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
-
        
     }
 }

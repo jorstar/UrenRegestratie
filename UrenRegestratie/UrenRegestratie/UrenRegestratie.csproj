@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADMTaken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMTaken.Designer.cs">
+      <DependentUpon>ADMTaken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMUser_Taak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMUser_Taak.Designer.cs">
+      <DependentUpon>ADMUser_Taak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engineer.cs">
       <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
@@ -138,6 +150,12 @@
     <Compile Include="user_taak.cs">
       <DependentUpon>UrenRegModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ADMTaken.resx">
+      <DependentUpon>ADMTaken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMUser_Taak.resx">
+      <DependentUpon>ADMUser_Taak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>

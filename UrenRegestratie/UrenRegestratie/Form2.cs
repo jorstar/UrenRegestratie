@@ -33,7 +33,6 @@ namespace UrenRegestratie
             if(!eng.permissie)
             {
                 projectenToolStripMenuItem.Visible = false;
-                takenToolStripMenuItem.Visible = false;
                 gebruikersToolStripMenuItem.Visible = false;
             }
 
@@ -126,6 +125,29 @@ namespace UrenRegestratie
             {
                 ActiveMdiChild.Close();
             }
+        }
+
+        private void projectenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taakGevenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisposeAllChilds();
+            ADMUser_Taak newFrm = new ADMUser_Taak();
+            newFrm.MdiParent = this;
+            newFrm.WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
+
+        private void takenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisposeAllChilds();
+            ADMTaken newFrm = new ADMTaken();
+            newFrm.MdiParent = this;
+            newFrm.WindowState = FormWindowState.Maximized;
+            newFrm.Show();
         }
 
         
